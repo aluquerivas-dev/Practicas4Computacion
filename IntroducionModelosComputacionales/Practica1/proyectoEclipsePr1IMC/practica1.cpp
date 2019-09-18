@@ -70,9 +70,18 @@ int main(int argc, char **argv) {
     	PerceptronMulticapa mlp;
 
         // Parámetros del mlp. Por ejemplo, mlp.dEta = valorQueSea;
-
+        mlp.dEta = 0.10;
+        mlp.dMu = 0.90;
+        mlp.dValidacion = 0.10;
+        mlp.dDecremento = 2; 
         // Lectura de datos de entrenamiento y test: llamar a mlp.leerDatos(...)
-
+        Datos *pDatosTrain;
+        pDatosTrain = mlp.leerDatos(Tvalue);
+        if(pDatosTrain == NULL)
+        {
+            cerr << "El conjunto de datos de test no es válido. No se puede continuar." << endl;
+            exit(-1);
+        }
         // Inicializar vector topología
         //int *topologia = new int[capas+2];
         //topologia[0] = pDatosTrain->nNumEntradas;

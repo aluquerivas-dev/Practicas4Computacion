@@ -125,9 +125,16 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 // ------------------------------
 // Leer una matriz de datos a partir de un nombre de fichero y devolverla
 Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
+	Datos *auxData;
 
+		std::ifstream leer;
+		leer.open(archivo);
 
-	return NULL;
+	leer >> auxData->nNumEntradas;
+	leer >> auxData->nNumSalidas;
+	leer >> auxData->nNumPatrones;
+
+	return auxData;
 }
 
 // ------------------------------
