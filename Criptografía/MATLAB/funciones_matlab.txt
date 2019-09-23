@@ -1,0 +1,46 @@
+OPERACIONES CON VECTORES: 
+	v=[1 2 3]
+	- V(2) , da como resultado 2.
+	v=1:0.25:1.5, da un vector con 3 posiciones 1 ,1.25 , 1.50
+	v=rand(1,4)*10, crea un vector de 4 elementos con numero aleatorios entre 0-10.
+
+
+OPERACIONES CON MATRICES: 
+	v=[1 2 3;4 5 6;7 8 9]
+	- A(2,3), da como resultado 6
+	- A(:,3), da como rsultado la columna 3 de la matriz 3 6 9
+	eye(3) , da una matriz diagonal de 1.
+	ones()
+	zeros()
+	A*B , da el resultado de la multiplicacion de matrices
+	A.*B , da como resultado de una nueva matriz multiplicando cada posicion de ambas matrices.
+	A² o A*A , potencia 2 de la matriz A.
+	matriz transpuesta: v'
+	det(A): determinante de A
+	inv(A): inversa de A
+
+FUNCIONES VARIAS:
+
+	mod(4.1,1): Sabemos si 4.1 es entero
+
+	lookfor "palabra" : Busca en el help aquella funcion con una palabra contenida como "palabra"
+
+	gdc: maximo comun divisor
+	- [mcd,u,v]=gdc(4,27)
+
+	format x:
+		- x pude ser short , long, long e.
+
+	size(A):
+		- te dice el tamaño del vector o de la matriz
+
+	trace(A):
+		- Te dice la traza de la matriz o vector.
+	rank(A):
+		- Te dice el rango de la matriz o vector.
+
+OPERADORES LOGICOS
+	== Igual
+	<= Menor Igual
+	>= Mayor Igual
+	~= Distinto
