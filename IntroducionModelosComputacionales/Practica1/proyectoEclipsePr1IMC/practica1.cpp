@@ -23,18 +23,68 @@ using namespace std;
 int main(int argc, char **argv) {
     // Procesar los argumentos de la línea de comandos
     bool Tflag = 0, wflag = 0, pflag = 0;
-    char *Tvalue = NULL, *wvalue = NULL;
+    char *Tvalue = NULL, *wvalue = NULL,*tvalue = NULL;
     int c;
-
+    //Valores Iniciales
+        float dEta = 0.10;
+        float dMu = 0.90;
+        float dValidacion = 0.0;
+        float dDecremento = 1;
+        int numIteraciones=1000;
+        int numcapasOcultas=1;
+        int numneucaOcultas=5;
+    //
     opterr = 0;
 
     // a: opción que requiere un argumento
     // a:: el argumento requerido es opcional
-    while ((c = getopt(argc, argv, "T:w:p")) != -1)
+    while ((c = getopt(argc, argv, "t:i::l::h::e::m::v::d::")) != -1)
     {
         // Se han añadido los parámetros necesarios para usar el modo opcional de predicción (kaggle).
         // Añadir el resto de parámetros que sean necesarios para la parte básica de las prácticas.
         switch(c){
+            case 't'
+            //fichero con datos de entrenamiento
+                tvalue = optarg;
+                if(tvtvalue== NULL)
+                {
+                    cout<<"Fichero de datos de entramiento invalido\n";
+                    exit(1);
+                }
+                break;
+            case 'T'
+            //fichero con datos de entrada
+                break;
+            case 'i'
+            //indica el  numero de interaciones
+                numIteraciones = atoi(optarg);
+                break;
+            case 'l'
+            //indica el  numero de capas ocultas
+                numcapasOcultas = atoi(optarg);
+                break;
+            case 'h'
+            //indica el  numero de neuronas en cada capa oculta
+                numneucaOcultas = atoi(optarg);
+                break;
+            case 'e'
+            //indica el  valor del parametro eta(n), por defecto n=0.1
+                dEta = atof(optarg);;
+                break;
+            case 'm'
+            //indica el  valor del parametro mu(n), por defecto n=0.9
+                dMu = atof(optarg);;
+                break;
+            case 'v'
+            //indica el  ratio de patrones de entramiento a usar como valores de validacion, por defecto n=0.0
+                dValidacion = atof(optarg);;
+                break;
+                
+            case 'd'
+            //indica el valor del factor de decremento F, por devecto n=1
+                dDecremento = atof(optarg);;
+                break; 
+            //Paramametros opcionales del algoritmo   
             case 'T':
                 Tflag = true;
                 Tvalue = optarg;
@@ -60,7 +110,7 @@ int main(int argc, char **argv) {
                 return EXIT_FAILURE;
         }
     }
-
+    
     if (!pflag) {
         ////////////////////////////////////////
         // MODO DE ENTRENAMIENTO Y EVALUACIÓN //
@@ -68,7 +118,7 @@ int main(int argc, char **argv) {
 
         // Objeto perceptrón multicapa
     	PerceptronMulticapa mlp;
-
+        std::cout
         // Parámetros del mlp. Por ejemplo, mlp.dEta = valorQueSea;
         mlp.dEta = 0.10;
         mlp.dMu = 0.90;

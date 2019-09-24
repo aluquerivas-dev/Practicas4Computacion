@@ -15,7 +15,7 @@ struct Datos {
 int main(int argc, char const *argv[])
 {
 	struct Datos data;
-
+	
 	std::ifstream ficheroEntrada;
 	ficheroEntrada.open("train_sin.dat");
 	std::cout<<"Hola1\n";
@@ -27,11 +27,40 @@ int main(int argc, char const *argv[])
 	std::cout<<"Entradas:" << data.nNumEntradas<< std::endl;
 	std::cout<<"Salidas:" << data.nNumSalidas<< std::endl;
 	std::cout<<"Patrones:" << data.nNumPatrones<< std::endl;
-	ficheroEntrada.close();
-	std::cout<< "Puntero:" << int(*data);
-	/*
-	getline(ficheroEntrada, firstLine);
- 	ficheroEntrada.close();
- 	std::cout << "Frase leida: " << firstLine << std::endl;
- 	*/
-}
+	
+	data.entradas = (double **)malloc (data.nNumPatrones*sizeof(double *));
+
+	for (int i=0;i<data.nNumPatrones;i++)//Entradas
+		data.entradas[i] = (double *) malloc (data.nNumEntradas*sizeof(double));
+
+	data.salidas = (double **)malloc (data.nNumPatrones*sizeof(double *));
+
+	for (int i=0;i<data.nNumPatrones;i++)//Salidas
+		data.salidas[i] = (double *) malloc (data.nNumSalidas*sizeof(double));
+	//Rellenamos matriz de entrada y salida de datos.
+   int i = 0;
+   int j = 0;
+   int linea=0;
+   while (!ficheroEntrada.eof())
+   {
+      
+	 for(int x = 0; x < data.nNumEntradas; x++)
+	 {
+		 ficheroEntrada >> data.entradas[i][x];
+		 std::cout<<"Linea("<<linea<<"): "<<data.entradas[j][x];
+	 }
+	 for(int y = 0; y < data.nNumEntradas; y++)
+	 {
+		 ficheroEntrada >> data.salidas[j][y];
+		 std::cout<<" "<<data.entradas[j][y];
+		 
+	 }
+	 std::cout<<"\n";
+      
+      i++;
+	  j++;
+	  linea++;
+   }
+   std::cout<<"hola\n";
+   ficheroEntrada.close(); 
+   }
