@@ -43,44 +43,37 @@ int main(int argc, char **argv) {
         // Se han añadido los parámetros necesarios para usar el modo opcional de predicción (kaggle).
         // Añadir el resto de parámetros que sean necesarios para la parte básica de las prácticas.
         switch(c){
-            case 't'
+            case 't':
             //fichero con datos de entrenamiento
+                tflag = true;
                 tvalue = optarg;
-                if(tvtvalue== NULL)
-                {
-                    cout<<"Fichero de datos de entramiento invalido\n";
-                    exit(1);
-                }
                 break;
-            case 'T'
-            //fichero con datos de entrada
-                break;
-            case 'i'
+            case 'i':
             //indica el  numero de interaciones
                 numIteraciones = atoi(optarg);
                 break;
-            case 'l'
+            case 'l':
             //indica el  numero de capas ocultas
                 numcapasOcultas = atoi(optarg);
                 break;
-            case 'h'
+            case 'h':
             //indica el  numero de neuronas en cada capa oculta
                 numneucaOcultas = atoi(optarg);
                 break;
-            case 'e'
+            case 'e':
             //indica el  valor del parametro eta(n), por defecto n=0.1
-                dEta = atof(optarg);;
+                dEta = atof(optarg);
                 break;
-            case 'm'
+            case 'm':
             //indica el  valor del parametro mu(n), por defecto n=0.9
                 dMu = atof(optarg);;
                 break;
-            case 'v'
+            case 'v':
             //indica el  ratio de patrones de entramiento a usar como valores de validacion, por defecto n=0.0
                 dValidacion = atof(optarg);;
                 break;
                 
-            case 'd'
+            case 'd':
             //indica el valor del factor de decremento F, por devecto n=1
                 dDecremento = atof(optarg);;
                 break; 
@@ -97,7 +90,7 @@ int main(int argc, char **argv) {
                 pflag = true;
                 break;
             case '?':
-                if (optopt == 'T' || optopt == 'w' || optopt == 'p')
+                if (optopt == 'T' || optopt == 'w' || optopt == 'p' || optopt == 't')
                     fprintf (stderr, "La opción -%c requiere un argumento.\n", optopt);
                 else if (isprint (optopt))
                     fprintf (stderr, "Opción desconocida `-%c'.\n", optopt);
@@ -115,32 +108,47 @@ int main(int argc, char **argv) {
         ////////////////////////////////////////
         // MODO DE ENTRENAMIENTO Y EVALUACIÓN //
         ///////////////////////////////////////
-
+         if(tflag == false || Tflag == false){ 
+            exit(-1);
+        
+        if(Tvalue==NULL){
+            Tvalue=tvalue;
+        }
         // Objeto perceptrón multicapa
     	PerceptronMulticapa mlp;
-        std::cout
         // Parámetros del mlp. Por ejemplo, mlp.dEta = valorQueSea;
-        mlp.dEta = 0.10;
-        mlp.dMu = 0.90;
-        mlp.dValidacion = 0.10;
-        mlp.dDecremento = 2; 
+        mlp.dEta = dEta;
+        mlp.dMu = dMu;
+        mlp.dValidacion = dValidacion;
+        mlp.dDecremento = dDecremento;
         // Lectura de datos de entrenamiento y test: llamar a mlp.leerDatos(...)
         Datos *pDatosTrain;
-        pDatosTrain = mlp.leerDatos(Tvalue);
-        if(pDatosTrain == NULL)
+        Datos *pDatosTest;
+        pDatosTrain = mlp.leerDatos(tvalue);
+        pDatosTest = mlp.leerDatos(Tvalue);
+        if(pDatosTrain == NULL || pDatosTest == NULL)
         {
             cerr << "El conjunto de datos de test no es válido. No se puede continuar." << endl;
             exit(-1);
         }
         // Inicializar vector topología
-        //int *topologia = new int[capas+2];
-        //topologia[0] = pDatosTrain->nNumEntradas;
-        //for(int i=1; i<(capas+2-1); i++)
-        //	topologia[i] = neuronas;
-        //topologia[capas+2-1] = pDatosTrain->nNumSalidas;
+        //La topologia es el modelo de capas que la red tendra,
+        //por ejemplo si tiene una sola capa oculta 
+        //por defecto de 5 neuronas, tendriamos:
+        //          'Entrada' - topologia[0] = 'Tantas entradas como existan'
+        //          'Ocultas' - topologia[1] = '5'
+        //          'Salida'  - topologia[2] = 'Tantas entradas como existan'
+
+        int *topologia = new int[numcapasOcultas+2];//2 porque las capas de entrada+salida=2
+        topologia[0] = pDatosTrain->nNumEntradas;
+        for(int i=1; i<(numcapasOcultas+1); i++)
+        	topologia[i] = numneucaOcultas;
+        topologia[numneucaOcultas+1] = pDatosTrain->nNumSalidas;
+
+
 
         // Inicializar red con vector de topología
-        //mlp.inicializar(capas+2,topologia);
+        mlp.inicializar(numcapasOcultas+2,topologia);
 
 
         // Semilla de los números aleatorios

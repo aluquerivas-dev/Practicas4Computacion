@@ -23,12 +23,24 @@ using namespace util;
 // ------------------------------
 // CONSTRUCTOR: Dar valor por defecto a todos los parámetros
 PerceptronMulticapa::PerceptronMulticapa(){
+	dEta = 0.1;
+	dMu = 0.9;
+	pCapas = NULL;
+	nNumCapas = 3;
 
 }
 
 // ------------------------------
 // Reservar memoria para las estructuras de datos
 int PerceptronMulticapa::inicializar(int nl, int npl[]) {
+	nNumCapas = nl;
+	int aux = 0;
+	
+	pCapas = (Capa *)malloc(nl*sizeof(Capa));
+
+	pCapas[0].nNumNeuronas = npl[0];
+
+	pCapas[0].pNeuronas = (Neurona *)malloc(npl[0]*sizeof(Neurona));
 	return 1;
 }
 
@@ -125,16 +137,57 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 // ------------------------------
 // Leer una matriz de datos a partir de un nombre de fichero y devolverla
 Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
-	Datos *auxData;
+	Datos *data;
 
 		std::ifstream leer;
 		leer.open(archivo);
 
-	leer >> auxData->nNumEntradas;
-	leer >> auxData->nNumSalidas;
-	leer >> auxData->nNumPatrones;
+	leer >> data->nNumEntradas;
 
-	return auxData;
+	leer >> data->nNumSalidas;
+	
+	leer >> data->nNumPatrones;
+	
+	data->entradas = (double **)malloc (data->nNumPatrones*sizeof(double *));
+
+	for (int i=0;i<data->nNumPatrones;i++)//Entradas
+		data->entradas[i] = (double *) malloc (data->nNumEntradas*sizeof(double));
+
+	data->salidas = (double **)malloc (data->nNumPatrones*sizeof(double *));
+
+	for (int i=0;i<data->nNumPatrones;i++)//Salidas
+		data->salidas[i] = (double *) malloc (data->nNumSalidas*sizeof(double));
+	//Rellenamos matriz de entrada y salida de datos.
+   int i = 0;
+   int j = 0;
+   
+   //int linea=0;
+   while (!leer.eof())
+   {
+     //std::cout<<"Linea("<<linea<<"): -- [ ";
+	 for(int x = 0; x < data->nNumEntradas; x++)
+	 {
+		 leer >> data->entradas[i][x];
+		 //std::cout<<"("<<data->entradas[i][x]<<") ";
+	 }
+	//std::cout<<"] <---> [";
+	 for(int y = 0; y < data->nNumSalidas; y++)
+	 {
+		 leer >> data->salidas[j][y];
+		 //std::cout<<"("<<data->salidas[j][y]<<") ";
+		 
+	 }
+	 //std::cout<<"]\n";
+      
+      i++;
+	  j++;
+	  //linea++;
+   }
+   leer.close(); 
+
+
+
+	return data;
 }
 
 // ------------------------------
@@ -194,7 +247,7 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	int numSinMejorar;
 	double testError = 0;
 
-	double validationError;
+	double validationError=0.0;
 
 	// Generar datos de validación
 	if(dValidacion > 0 && dValidacion < 1){

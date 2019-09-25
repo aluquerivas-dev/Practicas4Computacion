@@ -17,12 +17,12 @@ int main(int argc, char const *argv[])
 	struct Datos data;
 	
 	std::ifstream ficheroEntrada;
-	ficheroEntrada.open("train_sin.dat");
-	std::cout<<"Hola1\n";
+	ficheroEntrada.open("test_quake.dat");
+
 	ficheroEntrada >> data.nNumEntradas;
-	std::cout<<"Hola1\n";
+
 	ficheroEntrada >> data.nNumSalidas;
-	std::cout<<"Hola1\n";
+
 	ficheroEntrada >> data.nNumPatrones;
 	std::cout<<"Entradas:" << data.nNumEntradas<< std::endl;
 	std::cout<<"Salidas:" << data.nNumSalidas<< std::endl;
@@ -43,24 +43,24 @@ int main(int argc, char const *argv[])
    int linea=0;
    while (!ficheroEntrada.eof())
    {
-      
+     std::cout<<"Linea("<<linea<<"): -- [ ";
 	 for(int x = 0; x < data.nNumEntradas; x++)
 	 {
 		 ficheroEntrada >> data.entradas[i][x];
-		 std::cout<<"Linea("<<linea<<"): "<<data.entradas[j][x];
+		 std::cout<<"("<<data.entradas[i][x]<<") ";
 	 }
-	 for(int y = 0; y < data.nNumEntradas; y++)
+	std::cout<<"] <---> [";
+	 for(int y = 0; y < data.nNumSalidas; y++)
 	 {
 		 ficheroEntrada >> data.salidas[j][y];
-		 std::cout<<" "<<data.entradas[j][y];
+		 std::cout<<"("<<data.salidas[j][y]<<") ";
 		 
 	 }
-	 std::cout<<"\n";
+	 std::cout<<"]\n";
       
       i++;
 	  j++;
 	  linea++;
    }
-   std::cout<<"hola\n";
    ficheroEntrada.close(); 
    }
