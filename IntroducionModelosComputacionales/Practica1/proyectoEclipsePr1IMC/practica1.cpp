@@ -22,7 +22,7 @@ using namespace std;
 
 int main(int argc, char **argv) {
     // Procesar los argumentos de la línea de comandos
-    bool Tflag = 0, wflag = 0, pflag = 0;
+    bool Tflag = 0,tflag = 0, wflag = 0, pflag = 0;
     char *Tvalue = NULL, *wvalue = NULL,*tvalue = NULL;
     int c;
     //Valores Iniciales
@@ -55,10 +55,20 @@ int main(int argc, char **argv) {
             case 'l':
             //indica el  numero de capas ocultas
                 numcapasOcultas = atoi(optarg);
+                if(numcapasOcultas < 1)
+                {
+                    cout<<" El numero de capas ocultas no puede ser inferior a 1.\n";
+                    exit(-1);
+                }
                 break;
             case 'h':
             //indica el  numero de neuronas en cada capa oculta
                 numneucaOcultas = atoi(optarg);
+                if(numneucaOcultas < 1)
+                {
+                    cout<<" El numero de nodos en capa oculta no puede ser inferior a 1.\n";
+                    exit(-1);
+                }
                 break;
             case 'e':
             //indica el  valor del parametro eta(n), por defecto n=0.1
@@ -108,10 +118,10 @@ int main(int argc, char **argv) {
         ////////////////////////////////////////
         // MODO DE ENTRENAMIENTO Y EVALUACIÓN //
         ///////////////////////////////////////
-         if(tflag == false || Tflag == false){ 
+         if(tflag == false){ 
             exit(-1);
         
-        if(Tvalue==NULL){
+        if(Tflag==false){
             Tvalue=tvalue;
         }
         // Objeto perceptrón multicapa
@@ -148,7 +158,7 @@ int main(int argc, char **argv) {
 
 
         // Inicializar red con vector de topología
-        mlp.inicializar(numcapasOcultas+2,topologia);
+        mlp.inicializar(numcapasOcultas+2,topologia);        //------>
 
 
         // Semilla de los números aleatorios
@@ -161,7 +171,7 @@ int main(int argc, char **argv) {
         	cout << "SEMILLA " << semillas[i] << endl;
         	cout << "**********" << endl;
     		srand(semillas[i]);
-    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,iteraciones,&(erroresTrain[i]),&(erroresTest[i]));
+    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
             // (Opcional - Kaggle) Guardamos los pesos cada vez que encontremos un modelo mejor.
@@ -217,4 +227,4 @@ int main(int argc, char **argv) {
         return EXIT_SUCCESS;
     }
 }
-
+}

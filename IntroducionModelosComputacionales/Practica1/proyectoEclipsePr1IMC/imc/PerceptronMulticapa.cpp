@@ -32,16 +32,50 @@ PerceptronMulticapa::PerceptronMulticapa(){
 
 // ------------------------------
 // Reservar memoria para las estructuras de datos
-int PerceptronMulticapa::inicializar(int nl, int npl[]) {
+void PerceptronMulticapa::inicializar(int nl, int npl[]) {
 	nNumCapas = nl;
-	int aux = 0;
-	
+	//Reservamos memoria para el vector que tendra las capas.
 	pCapas = (Capa *)malloc(nl*sizeof(Capa));
 
+	//Primera capa con el numero de neuronas y su reserva de memoria, es la unica que no dispondra de sesgo.
 	pCapas[0].nNumNeuronas = npl[0];
-
 	pCapas[0].pNeuronas = (Neurona *)malloc(npl[0]*sizeof(Neurona));
-	return 1;
+	
+
+	int TEMP = 0;
+	int sesgo = 1;
+	for(int i = 1; i <nl; i++)//Bucle que usaremos para iniciar las i capas ocultas
+	{	
+		pCapas[i].nNumNeuronas = npl[i];
+		pCapas[i].pNeuronas = (Neurona *)malloc(npl[i]*sizeof(Neurona));
+			
+			for(int j = 0; j < pCapas[i].nNumNeuronas; j++)//Bucle que usaremos para iniciar el tamaño de la capa oculta i
+			{
+				// En temp se guarda el numero de neuronas+sesgo de la cada capa oculta i.
+				//Si por ejemplo estamos en la capa oculta numero 1 
+				//esta tendra sus vectores de pesos a NumdeEntradas+1(+1 del Sesgo)
+				TEMP = npl[i-1]+sesgo;
+				
+				pCapas[i].pNeuronas[j].w = (double *)malloc(TEMP*sizeof(double));           
+				pCapas[i].pNeuronas[j].deltaW = (double *)malloc(TEMP*sizeof(double));        
+				pCapas[i].pNeuronas[j].ultimoDeltaW = (double *)malloc(TEMP*sizeof(double));  
+				pCapas[i].pNeuronas[j].wCopia = (double *)malloc(TEMP*sizeof(double)); 
+
+					
+					for(int k = 0; k < TEMP; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
+					{
+						pCapas[i].pNeuronas[j].w[k] = 0.0;           
+						pCapas[i].pNeuronas[j].deltaW[k] = 0.0;        
+						pCapas[i].pNeuronas[j].ultimoDeltaW[k] = 0.0;  
+						pCapas[i].pNeuronas[j].wCopia[k] = 0.0; 
+					}
+					
+			}
+			TEMP = 0;
+			//Reiniciamos el temporal por si acaso se quedan datos basura.
+			
+	}
+	
 }
 
 
@@ -282,7 +316,7 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 		// OJO: en este caso debemos guardar el error de validación anterior, no el mínimo
 		// Por lo demás, la forma en que se debe comprobar la condición de parada es similar
 		// a la que se ha aplicado más arriba para el error de entrenamiento
-
+		
 		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
 
 	} while ( countTrain<maxiter );
