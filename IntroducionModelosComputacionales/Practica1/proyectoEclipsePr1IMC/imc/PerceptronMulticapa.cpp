@@ -91,11 +91,54 @@ PerceptronMulticapa::~PerceptronMulticapa() {
 // Liberar memoria para las estructuras de datos
 void PerceptronMulticapa::liberarMemoria() {
 
+	for(int i = 0;i<nNumCapas;i++){
+		//Vamos recorriendo todas las capas i para liberar memoria
+		for(int j = 0;j<pCapas[i].nNumNeuronas;j++)
+		{
+			if(i!=0){//La primera capa no tiene inicializado ningun vector puesto que no hay neuronas predecesoras
+			//Cada capa tiene un array de neuronas, las recorremos con j y liberamos cada vector
+			free(pCapas[i].pNeuronas[j].w);
+			free(pCapas[i].pNeuronas[j].deltaW);
+			free(pCapas[i].pNeuronas[j].ultimoDeltaW);
+			free(pCapas[i].pNeuronas[j].wCopia);
+			}
+		}
+		//Se libera el vector de neuronas de la capa i
+		free(pCapas[i].pNeuronas);
+	}
+	//Se livera el vector de capas
+	free(pCapas);
+
 }
 
 // ------------------------------
 // Rellenar todos los pesos (w) aleatoriamente entre -1 y 1
 void PerceptronMulticapa::pesosAleatorios() {
+
+	
+
+	for(int i = 1; i <nNumCapas; i++)
+	{	
+	//Recorremos las capas desde la 1 hasta la nNumcapas
+	//La capa 1 no tiene conexiones anteriores por ello no se inicalizan datos.		
+		for(int j = 0; j < pCapas[i].nNumNeuronas; j++)
+		{
+		//Cada capa tiene un vector de neuronas donde cada una tiene un vector de pesos
+		//pCapas[i-1].nNumNeuronas+1 guarda la cantidad de neuronas de la capa anterior + el sesgo
+					
+			for(int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
+			{
+			//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
+			//Metemos valores aleatorios en estos arrays.
+				double X = (double)rand() / RAND_MAX;
+    			double Y = (-1.0) + X * ((1.0) - (-1.0));
+				pCapas[i].pNeuronas[j].w[k] = Y;           
+				pCapas[i].pNeuronas[j].wCopia[k] = Y; 
+			}
+					
+			}
+			
+	}
 
 }
 
@@ -116,11 +159,50 @@ void PerceptronMulticapa::recogerSalidas(double* output)
 // Hacer una copia de todos los pesos (copiar w en copiaW)
 void PerceptronMulticapa::copiarPesos() {
 
+	for(int i = 1; i <nNumCapas; i++)
+	{	
+	//Recorremos las capas desde la 1 hasta la nNumcapas
+	//La capa 1 no tiene conexiones anteriores por ello no se inicalizan datos.		
+		for(int j = 0; j < pCapas[i].nNumNeuronas; j++)
+		{
+		//Cada capa tiene un vector de neuronas donde cada una tiene un vector de pesos
+		//pCapas[i-1].nNumNeuronas+1 guarda la cantidad de neuronas de la capa anterior + el sesgo
+					
+			for(int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
+			{
+			//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
+			//Metemos valores de w en copia por si hace falta restaurar.
+			pCapas[i].pNeuronas[j].wCopia[k] = pCapas[i].pNeuronas[j].w[k];; 
+			}
+					
+			}
+			
+	}
+
 }
 
 // ------------------------------
 // Restaurar una copia de todos los pesos (copiar copiaW en w)
 void PerceptronMulticapa::restaurarPesos() {
+	for(int i = 1; i <nNumCapas; i++)
+	{	
+	//Recorremos las capas desde la 1 hasta la nNumcapas
+	//La capa 1 no tiene conexiones anteriores por ello no se inicalizan datos.		
+		for(int j = 0; j < pCapas[i].nNumNeuronas; j++)
+		{
+		//Cada capa tiene un vector de neuronas donde cada una tiene un vector de pesos
+		//pCapas[i-1].nNumNeuronas+1 guarda la cantidad de neuronas de la capa anterior + el sesgo
+					
+			for(int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
+			{
+			//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
+			//Metemos valores de copia en w para su restauracion.
+			pCapas[i].pNeuronas[j].w[k] = pCapas[i].pNeuronas[j].wCopia[k];; 
+			}
+					
+			}
+			
+	}
 
 }
 
