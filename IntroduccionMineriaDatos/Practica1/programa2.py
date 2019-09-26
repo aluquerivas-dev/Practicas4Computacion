@@ -28,6 +28,7 @@ while flag!=2:
 
 numerador = NP.dot(aux[0], aux[1])
 denominador = (NP.linalg.norm(aux[0])*NP.linalg.norm(aux[1]))
-print("El angulo es: "+str((NP.arccos(numerador/denominador) * 180 / math.pi))+"")
+print("El angulo en radianes es: "+str(numerador/denominador)+"")
+print("El angulo en grados es: "+str((NP.arccos(numerador/denominador) * 180 / math.pi))+"")
 
 

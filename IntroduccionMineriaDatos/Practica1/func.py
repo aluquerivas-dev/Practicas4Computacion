@@ -1,4 +1,5 @@
 import numpy as NP
+from scipy import stats as ST
 def openMatrixFiledata(nameFile,deli):
 	openFile = NP.loadtxt(nameFile, delimiter=deli)
 	return openFile
@@ -13,4 +14,9 @@ def createMatrixByKeyboard():
        		m[i][j]=dat
     return m
 
-	
+def numpyCalMode(matrix):
+    aux=[]
+    for i in range(NP.size(matrix,1)):
+        for j in range(NP.size(matrix,0)):
+            aux.append(matrix[i][j])  
+    return ST.mode(aux)[0][0]
