@@ -146,12 +146,24 @@ void PerceptronMulticapa::pesosAleatorios() {
 // Alimentar las neuronas de entrada de la red con un patrón pasado como argumento
 void PerceptronMulticapa::alimentarEntradas(double* input) {
 
+	for (int i = 0; i <pCapas[0].nNumNeuronas; i++)
+	{
+		pCapas[0].pNeuronas[i].x=input[i];
+	}
+	
 }
 
 // ------------------------------
 // Recoger los valores predichos por la red (out de la capa de salida) y almacenarlos en el vector pasado como argumento
 void PerceptronMulticapa::recogerSalidas(double* output)
 {
+	//La ultima capa es la nNumCapas-1
+	for (int i = 0; i < pCapas[nNumCapas-1].nNumNeuronas; i++)
+	{
+		//Recogemos los valores out de la ultima capa por cada una de sus neuronas
+		output[i] = pCapas[nNumCapas-1].pNeuronas[i].x;
+	}
+	
 
 }
 
@@ -170,9 +182,9 @@ void PerceptronMulticapa::copiarPesos() {
 					
 			for(int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
 			{
-			//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
-			//Metemos valores de w en copia por si hace falta restaurar.
-			pCapas[i].pNeuronas[j].wCopia[k] = pCapas[i].pNeuronas[j].w[k];; 
+				//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
+				//Metemos valores de w en copia por si hace falta restaurar.
+				pCapas[i].pNeuronas[j].wCopia[k] = pCapas[i].pNeuronas[j].w[k]; 
 			}
 					
 			}
@@ -195,9 +207,9 @@ void PerceptronMulticapa::restaurarPesos() {
 					
 			for(int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)//Bucle que usaremos para iniciar el valor de la capa oculta i
 			{
-			//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
-			//Metemos valores de copia en w para su restauracion.
-			pCapas[i].pNeuronas[j].w[k] = pCapas[i].pNeuronas[j].wCopia[k];; 
+				//Por cada neurona j de la capa i recorremos con k los vectores de pesos w y su copia
+				//Metemos valores de copia en w para su restauracion.
+				pCapas[i].pNeuronas[j].w[k] = pCapas[i].pNeuronas[j].wCopia[k];
 			}
 					
 			}
@@ -209,13 +221,41 @@ void PerceptronMulticapa::restaurarPesos() {
 // ------------------------------
 // Calcular y propagar las salidas de las neuronas, desde la primera capa hasta la última
 void PerceptronMulticapa::propagarEntradas() {
+	double c=0.0;
+	for (int i = 1; i <nNumCapas; i++)
+	{
+		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
+		{
+			//pCapas[i-1].nNumNeuronas+1 , simboliza capa anterior y su sesgo que es el +1
+			//Este bucle recorre la capa anterior a i, i-1
+			for (int k = 1; j < pCapas[i-1].nNumNeuronas+1; k++)
+			{
+				// [k-1].x , porque de la capa anterior tenemos que empezar por la neurona 0
+				// pNeuronas[j].w[k] , porque en la capa i la neurona j su peso w[0] es el sesgo y no se tiene en cuenta
+				c+=pCapas[i-1].pNeuronas[k-1].x*pCapas[i].pNeuronas[j].w[k];
+			}
+			pCapas[i].pNeuronas[j].x = (1/(1 + exp((-1)*c)));
+			c = 0.0;
+		}
+		
+		
+	}
+	
 	
 }
 
 // ------------------------------
 // Calcular el error de salida (MSE) del out de la capa de salida con respecto a un vector objetivo y devolverlo
 double PerceptronMulticapa::calcularErrorSalida(double* target) {
-	return -1;
+
+	double MSE=0.0;
+	//nNumCapas-1, por que la notacion vector es tenemos 5 capas pero en vector es la capa 4
+	for (int i = 0; i<pCapas[nNumCapas-1].nNumNeuronas; i++)
+	{
+		MSE += pow(target[i] - pCapas[nNumCapas-1].pNeuronas[i].x, 2);
+	}
+	MSE=MSE/pCapas[nNumCapas-1].nNumNeuronas;
+	return MSE;
 }
 
 
