@@ -237,9 +237,13 @@ void PerceptronMulticapa::propagarEntradas() {
 				//cout<<"Neurona capa anterior: "<<pCapas[i-1].nNumNeuronas<<"\n";
 				// [k-1].x , porque de la capa anterior tenemos que empezar por la neurona 0
 				// pNeuronas[j].w[k] , porque en la capa i la neurona j su peso w[0] es el sesgo y no se tiene en cuenta
-				c+=pCapas[i-1].pNeuronas[k-1].x*pCapas[i].pNeuronas[j].w[k];
-			
+		
+				c += pCapas[i-1].pNeuronas[k-1].x*pCapas[i].pNeuronas[j].w[k];
+
 			}
+			//SESGO
+			c += pCapas[i].pNeuronas[j].w[0];
+
 			pCapas[i].pNeuronas[j].x = (1/(1 + exp((-1)*c)));
 			c = 0.0;
 		}
@@ -269,17 +273,24 @@ double PerceptronMulticapa::calcularErrorSalida(double* target) {
 // Retropropagar el error de salida con respecto a un vector pasado como argumento, desde la última capa hasta la primera
 void PerceptronMulticapa::retropropagarError(double* objetivo) {
 	double C = 0.0;
-	for(int i=1; i<pCapas[nNumCapas-1].nNumNeuronas; i++){
+
+	for(int i=1; i<pCapas[nNumCapas-1].nNumNeuronas; i++)
+	{
 		pCapas[nNumCapas-1].pNeuronas[i].dX =  (-1)*(objetivo[i] - pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
 	}
-	for(int i=nNumCapas-1; i>=0; i--){
-		for(int j=1; j<pCapas[i].nNumNeuronas; j++){
-			//Se calcula el sumatorio de las entradasy su derivada en la siguiente capa
-			for(int k=0; k<pCapas[i+1].nNumNeuronas; k++){
+
+
+	for(int i=nNumCapas-2; i>=0; i--)
+	{
+		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
+		{
+			//Se calcula el sumatorio de las entradas y su derivada en la siguiente capa
+			for(int k=0; k<pCapas[i+1].nNumNeuronas; k++)
+			{
 				C += pCapas[i+1].pNeuronas[k].w[j+1] * pCapas[i+1].pNeuronas[k].dX;
 			}
 
-			pCapas[i].pNeuronas[j].dX = C * pCapas[i].pNeuronas[j].x * (1 -pCapas[i].pNeuronas[j].x);
+			pCapas[i].pNeuronas[j].dX = C * pCapas[i].pNeuronas[j].x * (1-pCapas[i].pNeuronas[j].x);
 		}
 	}
 	
@@ -292,11 +303,11 @@ void PerceptronMulticapa::acumularCambio() {
 	{
 		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
 		{
-			for(int k=1; k<pCapas[i-1].nNumNeuronas+1; k++)
+			for(int k=0; k<pCapas[i-1].nNumNeuronas+1; k++)
 			{
 				pCapas[i].pNeuronas[j].deltaW[k] +=  pCapas[i].pNeuronas[j].dX * pCapas[i-1].pNeuronas[k-1].x;
 			}
-				pCapas[i].pNeuronas[j].deltaW[0] += pCapas[i].pNeuronas[j].dX;
+				
 
 		}
 	}
