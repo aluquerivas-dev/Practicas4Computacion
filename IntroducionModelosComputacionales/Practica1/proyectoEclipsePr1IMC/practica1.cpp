@@ -113,14 +113,16 @@ int main(int argc, char **argv) {
                 return EXIT_FAILURE;
         }
     }
-    
     if (!pflag) {
         ////////////////////////////////////////
         // MODO DE ENTRENAMIENTO Y EVALUACIÓN //
         ///////////////////////////////////////
-         if(tflag == false){ 
+
+        if(tflag == false)
+        {
             exit(-1);
-        
+        } 
+    
         if(Tflag==false){
             Tvalue=tvalue;
         }
@@ -134,8 +136,11 @@ int main(int argc, char **argv) {
         // Lectura de datos de entrenamiento y test: llamar a mlp.leerDatos(...)
         Datos *pDatosTrain;
         Datos *pDatosTest;
+    
         pDatosTrain = mlp.leerDatos(tvalue);
-        pDatosTest = mlp.leerDatos(Tvalue);
+    
+        pDatosTest = mlp.leerDatos(tvalue);
+   
         if(pDatosTrain == NULL || pDatosTest == NULL)
         {
             cerr << "El conjunto de datos de test no es válido. No se puede continuar." << endl;
@@ -147,19 +152,18 @@ int main(int argc, char **argv) {
         //por defecto de 5 neuronas, tendriamos:
         //          'Entrada' - topologia[0] = 'Tantas entradas como existan'
         //          'Ocultas' - topologia[1] = '5'
-        //          'Salida'  - topologia[2] = 'Tantas entradas como existan'
-
+        //          'Salida'  - topologia[2] = 'Tantas salidas como existan'
+     
         int *topologia = new int[numcapasOcultas+2];//2 porque las capas de entrada+salida=2
         topologia[0] = pDatosTrain->nNumEntradas;
         for(int i=1; i<(numcapasOcultas+1); i++)
         	topologia[i] = numneucaOcultas;
         topologia[numneucaOcultas+1] = pDatosTrain->nNumSalidas;
-
-
-
+      
         // Inicializar red con vector de topología
         mlp.inicializar(numcapasOcultas+2,topologia);        //------>
 
+        cout<<"FUUUU 3\n";
 
         // Semilla de los números aleatorios
         int semillas[] = {100,200,300,400,500};
@@ -171,7 +175,8 @@ int main(int argc, char **argv) {
         	cout << "SEMILLA " << semillas[i] << endl;
         	cout << "**********" << endl;
     		srand(semillas[i]);
-    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
+            //CAMBIO
+    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones* pDatosTrain->nNumEntradas,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
             // (Opcional - Kaggle) Guardamos los pesos cada vez que encontremos un modelo mejor.
@@ -195,36 +200,5 @@ int main(int argc, char **argv) {
         cout << "Error de test (Media +- DT):          " << mediaErrorTest << " +- " << desviacionTipicaErrorTest << endl;
         return EXIT_SUCCESS;
     }
-    else {
-
-        /////////////////////////////////
-        // MODO DE PREDICCIÓN (KAGGLE) //
-        ////////////////////////////////
-
-        // Desde aquí hasta el final del fichero no es necesario modificar nada.
-        
-        // Objeto perceptrón multicapa
-        PerceptronMulticapa mlp;
-
-        // Inicializar red con vector de topología
-        if(!wflag || !mlp.cargarPesos(wvalue))
-        {
-            cerr << "Error al cargar los pesos. No se puede continuar." << endl;
-            exit(-1);
-        }
-
-        // Lectura de datos de entrenamiento y test: llamar a mlp.leerDatos(...)
-        Datos *pDatosTest;
-        pDatosTest = mlp.leerDatos(Tvalue);
-        if(pDatosTest == NULL)
-        {
-            cerr << "El conjunto de datos de test no es válido. No se puede continuar." << endl;
-            exit(-1);
-        }
-
-        mlp.predecir(pDatosTest);
-
-        return EXIT_SUCCESS;
     }
-}
-}
+
