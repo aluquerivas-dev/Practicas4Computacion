@@ -226,15 +226,19 @@ void PerceptronMulticapa::propagarEntradas() {
 	double c=0.0;
 	for (int i = 1; i <nNumCapas; i++)
 	{
+		
 		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 		{
+		
 			//pCapas[i-1].nNumNeuronas+1 , simboliza capa anterior y su sesgo que es el +1
 			//Este bucle recorre la capa anterior a i, i-1
-			for (int k = 1; j < pCapas[i-1].nNumNeuronas+1; k++)
+			for (int k = 1; k < pCapas[i-1].nNumNeuronas+1; k++)
 			{
+				//cout<<"Neurona capa anterior: "<<pCapas[i-1].nNumNeuronas<<"\n";
 				// [k-1].x , porque de la capa anterior tenemos que empezar por la neurona 0
 				// pNeuronas[j].w[k] , porque en la capa i la neurona j su peso w[0] es el sesgo y no se tiene en cuenta
 				c+=pCapas[i-1].pNeuronas[k-1].x*pCapas[i].pNeuronas[j].w[k];
+			
 			}
 			pCapas[i].pNeuronas[j].x = (1/(1 + exp((-1)*c)));
 			c = 0.0;
@@ -367,12 +371,17 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 		}
 		
 	}
-
+	
 	alimentarEntradas(entrada);
+	
 	propagarEntradas();
+	
 	retropropagarError(objetivo);
+	
 	acumularCambio();
+	
 	ajustarPesos();
+;
 }
 
 // ------------------------------
@@ -492,9 +501,11 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	double validationError=0.0;
 
 	// Generar datos de validación
+	/*
 	if(dValidacion > 0 && dValidacion < 1){
 		
 	}
+	*/
 
 
 	// Aprendizaje del algoritmo
@@ -527,7 +538,7 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 		
 		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
 
-	} while ( countTrain<maxiter || numSinMejorar<50);
+	} while (countTrain<maxiter);
 
 	cout << "PESOS DE LA RED" << endl;
 	cout << "===============" << endl;

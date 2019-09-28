@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
                 pflag = true;
                 break;
             case '?':
-                if (optopt == 'T' || optopt == 'w' || optopt == 'p' || optopt == 't')
+                if (optopt == 'T' || optopt == 'w' || optopt == 'p' || optopt == 't' || optopt == 'i')
                     fprintf (stderr, "La opción -%c requiere un argumento.\n", optopt);
                 else if (isprint (optopt))
                     fprintf (stderr, "Opción desconocida `-%c'.\n", optopt);
@@ -163,7 +163,7 @@ int main(int argc, char **argv) {
         // Inicializar red con vector de topología
         mlp.inicializar(numcapasOcultas+2,topologia);        //------>
 
-        cout<<"FUUUU 3\n";
+       
 
         // Semilla de los números aleatorios
         int semillas[] = {100,200,300,400,500};
@@ -175,8 +175,8 @@ int main(int argc, char **argv) {
         	cout << "SEMILLA " << semillas[i] << endl;
         	cout << "**********" << endl;
     		srand(semillas[i]);
-            //CAMBIO
-    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones* pDatosTrain->nNumEntradas,&(erroresTrain[i]),&(erroresTest[i]));
+       
+    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
             // (Opcional - Kaggle) Guardamos los pesos cada vez que encontremos un modelo mejor.

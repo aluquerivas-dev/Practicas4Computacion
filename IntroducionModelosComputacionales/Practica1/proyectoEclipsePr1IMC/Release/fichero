@@ -1,0 +1,3575 @@
+Entradas:3
+Salidas:1
+Patrones:545
+Entradas:3
+Salidas:1
+Patrones:545
+GUAPO 0
+GUAPO 0.5
+GUAPO1
+HOLA 2
+HOLA 2
+HOLA 2
+HOLA 2
+HOLA 2
+**********
+SEMILLA 100
+**********
+2**********
+3**********
+4**********
+Iteración 1	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 2	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 3	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 4	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 5	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 6	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 7	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 8	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 9	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 10	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 11	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 12	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 13	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 14	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 15	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 16	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 17	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 18	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 19	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 20	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 21	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 22	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 23	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 24	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 25	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 26	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 27	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 28	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 29	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 30	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 31	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 32	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 33	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 34	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 35	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 36	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 37	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 38	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 39	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 40	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 41	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 42	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 43	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 44	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 45	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 46	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 47	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 48	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 49	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 50	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 51	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 52	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 53	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 54	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 55	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 56	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 57	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 58	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 59	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 60	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 61	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 62	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 63	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 64	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 65	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 66	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 67	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 68	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 69	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 70	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 71	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 72	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 73	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 74	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 75	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 76	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 77	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 78	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 79	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 80	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 81	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 82	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 83	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 84	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 85	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 86	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 87	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 88	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 89	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 90	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 91	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 92	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 93	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 94	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 95	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 96	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 97	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 98	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 99	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 100	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 101	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 102	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 103	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 104	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 105	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 106	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 107	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 108	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 109	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 110	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 111	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 112	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 113	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 114	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 115	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 116	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 117	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 118	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 119	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 120	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 121	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 122	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 123	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 124	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 125	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 126	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 127	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 128	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 129	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 130	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 131	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 132	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 133	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 134	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 135	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 136	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 137	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 138	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 139	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 140	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 141	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 142	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 143	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 144	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 145	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 146	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 147	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 148	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 149	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 150	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 151	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 152	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 153	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 154	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 155	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 156	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 157	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 158	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 159	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 160	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 161	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 162	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 163	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 164	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 165	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 166	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 167	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 168	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 169	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 170	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 171	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 172	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 173	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 174	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 175	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 176	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 177	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 178	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 179	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 180	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 181	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 182	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 183	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 184	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 185	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 186	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 187	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 188	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 189	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 190	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 191	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 192	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 193	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 194	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 195	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 196	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 197	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 198	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 199	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 200	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 201	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 202	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 203	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 204	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 205	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 206	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 207	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 208	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 209	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 210	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 211	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 212	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 213	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 214	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 215	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 216	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 217	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 218	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 219	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 220	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 221	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 222	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 223	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 224	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 225	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 226	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 227	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 228	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 229	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 230	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 231	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 232	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 233	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 234	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 235	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 236	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 237	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 238	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 239	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 240	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 241	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 242	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 243	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 244	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 245	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 246	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 247	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 248	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 249	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 250	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 251	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 252	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 253	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 254	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 255	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 256	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 257	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 258	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 259	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 260	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 261	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 262	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 263	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 264	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 265	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 266	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 267	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 268	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 269	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 270	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 271	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 272	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 273	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 274	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 275	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 276	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 277	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 278	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 279	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 280	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 281	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 282	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 283	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 284	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 285	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 286	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 287	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 288	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 289	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 290	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 291	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 292	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 293	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 294	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 295	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 296	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 297	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 298	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 299	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 300	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 301	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 302	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 303	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 304	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 305	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 306	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 307	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 308	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 309	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 310	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 311	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 312	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 313	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 314	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 315	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 316	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 317	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 318	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 319	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 320	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 321	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 322	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 323	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 324	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 325	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 326	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 327	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 328	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 329	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 330	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 331	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 332	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 333	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 334	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 335	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 336	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 337	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 338	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 339	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 340	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 341	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 342	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 343	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 344	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 345	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 346	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 347	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 348	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 349	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 350	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 351	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 352	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 353	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 354	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 355	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 356	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 357	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 358	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 359	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 360	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 361	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 362	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 363	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 364	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 365	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 366	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 367	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 368	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 369	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 370	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 371	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 372	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 373	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 374	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 375	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 376	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 377	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 378	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 379	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 380	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 381	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 382	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 383	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 384	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 385	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 386	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 387	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 388	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 389	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 390	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 391	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 392	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 393	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 394	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 395	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 396	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 397	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 398	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 399	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 400	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 401	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 402	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 403	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 404	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 405	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 406	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 407	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 408	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 409	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 410	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 411	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 412	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 413	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 414	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 415	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 416	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 417	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 418	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 419	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 420	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 421	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 422	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 423	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 424	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 425	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 426	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 427	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 428	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 429	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 430	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 431	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 432	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 433	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 434	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 435	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 436	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 437	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 438	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 439	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 440	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 441	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 442	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 443	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 444	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 445	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 446	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 447	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 448	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 449	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 450	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 451	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 452	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 453	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 454	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 455	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 456	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 457	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 458	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 459	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 460	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 461	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 462	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 463	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 464	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 465	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 466	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 467	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 468	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 469	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 470	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 471	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 472	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 473	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 474	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 475	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 476	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 477	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 478	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 479	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 480	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 481	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 482	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 483	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 484	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 485	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 486	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 487	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 488	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 489	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 490	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 491	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 492	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 493	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 494	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 495	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 496	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 497	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 498	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 499	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 500	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 501	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 502	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 503	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 504	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 505	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 506	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 507	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 508	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 509	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 510	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 511	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 512	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 513	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 514	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 515	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 516	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 517	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 518	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 519	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 520	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 521	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 522	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 523	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 524	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 525	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 526	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 527	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 528	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 529	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 530	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 531	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 532	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 533	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 534	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 535	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 536	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 537	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 538	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 539	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 540	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 541	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 542	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 543	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 544	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 545	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 546	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 547	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 548	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 549	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 550	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 551	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 552	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 553	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 554	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 555	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 556	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 557	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 558	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 559	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 560	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 561	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 562	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 563	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 564	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 565	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 566	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 567	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 568	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 569	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 570	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 571	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 572	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 573	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 574	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 575	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 576	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 577	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 578	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 579	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 580	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 581	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 582	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 583	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 584	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 585	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 586	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 587	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 588	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 589	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 590	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 591	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 592	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 593	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 594	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 595	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 596	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 597	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 598	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 599	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 600	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 601	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 602	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 603	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 604	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 605	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 606	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 607	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 608	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 609	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 610	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 611	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 612	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 613	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 614	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 615	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 616	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 617	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 618	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 619	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 620	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 621	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 622	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 623	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 624	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 625	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 626	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 627	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 628	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 629	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 630	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 631	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 632	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 633	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 634	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 635	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 636	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 637	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 638	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 639	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 640	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 641	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 642	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 643	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 644	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 645	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 646	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 647	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 648	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 649	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 650	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 651	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 652	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 653	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 654	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 655	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 656	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 657	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 658	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 659	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 660	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 661	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 662	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 663	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 664	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 665	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 666	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 667	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 668	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 669	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 670	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 671	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 672	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 673	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 674	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 675	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 676	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 677	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 678	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 679	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 680	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 681	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 682	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 683	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 684	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 685	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 686	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 687	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 688	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 689	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 690	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 691	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 692	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 693	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 694	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 695	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 696	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 697	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 698	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 699	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 700	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 701	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 702	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 703	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 704	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 705	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 706	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 707	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 708	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 709	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 710	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 711	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 712	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 713	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 714	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 715	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 716	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 717	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 718	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 719	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 720	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 721	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 722	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 723	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 724	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 725	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 726	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 727	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 728	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 729	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 730	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 731	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 732	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 733	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 734	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 735	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 736	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 737	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 738	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 739	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 740	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 741	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 742	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 743	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 744	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 745	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 746	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 747	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 748	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 749	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 750	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 751	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 752	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 753	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 754	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 755	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 756	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 757	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 758	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 759	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 760	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 761	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 762	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 763	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 764	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 765	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 766	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 767	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 768	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 769	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 770	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 771	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 772	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 773	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 774	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 775	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 776	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 777	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 778	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 779	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 780	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 781	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 782	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 783	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 784	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 785	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 786	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 787	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 788	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 789	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 790	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 791	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 792	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 793	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 794	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 795	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 796	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 797	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 798	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 799	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 800	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 801	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 802	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 803	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 804	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 805	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 806	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 807	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 808	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 809	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 810	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 811	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 812	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 813	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 814	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 815	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 816	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 817	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 818	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 819	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 820	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 821	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 822	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 823	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 824	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 825	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 826	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 827	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 828	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 829	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 830	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 831	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 832	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 833	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 834	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 835	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 836	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 837	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 838	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 839	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 840	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 841	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 842	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 843	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 844	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 845	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 846	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 847	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 848	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 849	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 850	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 851	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 852	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 853	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 854	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 855	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 856	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 857	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 858	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 859	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 860	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 861	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 862	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 863	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 864	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 865	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 866	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 867	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 868	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 869	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 870	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 871	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 872	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 873	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 874	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 875	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 876	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 877	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 878	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 879	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 880	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 881	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 882	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 883	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 884	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 885	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 886	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 887	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 888	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 889	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 890	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 891	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 892	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 893	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 894	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 895	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 896	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 897	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 898	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 899	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 900	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 901	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 902	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 903	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 904	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 905	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 906	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 907	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 908	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 909	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 910	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 911	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 912	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 913	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 914	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 915	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 916	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 917	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 918	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 919	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 920	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 921	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 922	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 923	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 924	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 925	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 926	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 927	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 928	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 929	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 930	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 931	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 932	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 933	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 934	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 935	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 936	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 937	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 938	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 939	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 940	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 941	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 942	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 943	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 944	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 945	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 946	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 947	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 948	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 949	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 950	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 951	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 952	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 953	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 954	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 955	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 956	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 957	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 958	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 959	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 960	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 961	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 962	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 963	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 964	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 965	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 966	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 967	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 968	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 969	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 970	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 971	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 972	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 973	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 974	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 975	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 976	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 977	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 978	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 979	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 980	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 981	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 982	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 983	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 984	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 985	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 986	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 987	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 988	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 989	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 990	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 991	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 992	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 993	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 994	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 995	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 996	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 997	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 998	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 999	 Error de entrenamiento: -1	 Error de validación: 0
+3**********
+4**********
+Iteración 1000	 Error de entrenamiento: -1	 Error de validación: 0
+PESOS DE LA RED
+===============
+Capa(1)
+[-0.368804] [0] 
+Salida Esperada Vs Salida Obtenida (test)
+=========================================
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.818182 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.818182 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.727273 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.454545 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.636364 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.545455 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.363636 -- -4.90198e+266 
+0.272727 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.181818 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0 -- -4.90198e+266 
+0.0909091 -- -4.90198e+266 
+0 -- -4.90198e+266 
+Finalizamos => Error de test final: -1
+**********
+SEMILLA 200
+**********
+2**********
+3**********
