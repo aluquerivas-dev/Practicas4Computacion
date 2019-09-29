@@ -34,15 +34,10 @@ PerceptronMulticapa::PerceptronMulticapa(){
 void PerceptronMulticapa::inicializar(int nl, int npl[]) {
 	nNumCapas = nl;
 	//Reservamos memoria para el vector que tendra las capas.
-	cout<<"GUAPO 0\n";
 	pCapas = (Capa *)calloc(nl,sizeof(Capa));
-	cout<<"GUAPO 0.5\n";
-
-	cout<<"GUAPO1\n";
 	//Primera capa con el numero de neuronas y su reserva de memoria, es la unica que no dispondra de sesgo.
 	pCapas[0].nNumNeuronas = npl[0];
 	pCapas[0].pNeuronas = (Neurona *)calloc(npl[0],sizeof(Neurona));
-	
 
 	int TEMP = 0;
 	int sesgo = 1;
@@ -57,7 +52,6 @@ void PerceptronMulticapa::inicializar(int nl, int npl[]) {
 				//Si por ejemplo estamos en la capa oculta numero 1 
 				//esta tendra sus vectores de pesos a NumdeEntradas+1(+1 del Sesgo)
 				TEMP = npl[i-1]+sesgo;
-				cout<<"HOLA 2\n";
 				pCapas[i].pNeuronas[j].w = (double*)calloc(TEMP,sizeof(double));           
 				pCapas[i].pNeuronas[j].deltaW = (double*)calloc(TEMP,sizeof(double));        
 				pCapas[i].pNeuronas[j].ultimoDeltaW = (double*)calloc(TEMP,sizeof(double));  
@@ -260,8 +254,10 @@ double PerceptronMulticapa::calcularErrorSalida(double* target) {
 
 	double MSE=0.0;
 	//nNumCapas-1, por que la notacion vector es tenemos 5 capas pero en vector es la capa 4
+
 	for (int i = 0; i<pCapas[nNumCapas-1].nNumNeuronas; i++)
 	{
+
 		MSE += pow(target[i] - pCapas[nNumCapas-1].pNeuronas[i].x, 2);
 	}
 	MSE=MSE/pCapas[nNumCapas-1].nNumNeuronas;
@@ -274,7 +270,7 @@ double PerceptronMulticapa::calcularErrorSalida(double* target) {
 void PerceptronMulticapa::retropropagarError(double* objetivo) {
 	double C = 0.0;
 
-	for(int i=1; i<pCapas[nNumCapas-1].nNumNeuronas; i++)
+	for(int i=0; i<pCapas[nNumCapas-1].nNumNeuronas; i++)
 	{
 		pCapas[nNumCapas-1].pNeuronas[i].dX =  (-1)*(objetivo[i] - pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
 	}
@@ -303,10 +299,11 @@ void PerceptronMulticapa::acumularCambio() {
 	{
 		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
 		{
-			for(int k=0; k<pCapas[i-1].nNumNeuronas+1; k++)
+			for(int k=1; k<pCapas[i-1].nNumNeuronas+1; k++)
 			{
 				pCapas[i].pNeuronas[j].deltaW[k] +=  pCapas[i].pNeuronas[j].dX * pCapas[i-1].pNeuronas[k-1].x;
 			}
+			pCapas[i].pNeuronas[j].deltaW[0] += pCapas[i].pNeuronas[j].dX;
 				
 
 		}
@@ -318,14 +315,18 @@ void PerceptronMulticapa::acumularCambio() {
 // ------------------------------
 // Actualizar los pesos de la red, desde la primera capa hasta la última
 void PerceptronMulticapa::ajustarPesos() {
-
+	double _deltaW,_ultimoDeltaW;
 	for(int i=1; i<nNumCapas; i++)
 	{
 		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
 		{
 			for(int k=0; k<pCapas[i-1].nNumNeuronas+1; k++)
 			{
-				pCapas[i].pNeuronas[j].w[k] += (-1)*dEta * pCapas[i].pNeuronas[j].deltaW[k] - dMu * (dEta*pCapas[i].pNeuronas[j].ultimoDeltaW[k]);
+				_deltaW = pCapas[i].pNeuronas[j].deltaW[k];
+
+				_ultimoDeltaW = pCapas[i].pNeuronas[j].ultimoDeltaW[k];
+
+				pCapas[i].pNeuronas[j].w[k] -= dEta * _deltaW + dMu * dEta * _ultimoDeltaW;
 			}
 
 		}
@@ -337,14 +338,13 @@ void PerceptronMulticapa::ajustarPesos() {
 void PerceptronMulticapa::imprimirRed() {
 
 	//Se omite la capa 0, ya que es la de entrada.
-
 	for (int i = 1; i < nNumCapas; i++)
 	{
 		cout<<"Capa("<<i<<")\n";
-		for (int j = 0; i < pCapas[i].nNumNeuronas; i++)
+		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 		{
 			//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
-			for (int k = 0; i < pCapas[i-1].nNumNeuronas; i++)
+			for (int k = 0; k < pCapas[i-1].nNumNeuronas; k++)
 			{
 				cout<<"["<<pCapas[i].pNeuronas[j].w[k]<<"] ";
 			}
@@ -353,7 +353,6 @@ void PerceptronMulticapa::imprimirRed() {
 		}
 		
 	}
-	
 
 
 }
@@ -365,14 +364,14 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 
 	//Entradas son el Train->Entradas , Objetivo es el Train->Salidas, del dataset leido por fichero
 	//Se omite la capa 0, ya que es la de entrada.
-
+	
 	for (int i = 1; i < nNumCapas; i++)
 	{
 	
-		for (int j = 0; i < pCapas[i].nNumNeuronas; i++)
+		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 		{
 			//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
-			for (int k = 0; i < pCapas[i-1].nNumNeuronas; i++)
+			for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
 			{
 				pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
 
@@ -382,17 +381,13 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 		}
 		
 	}
-	
+
 	alimentarEntradas(entrada);
-	
 	propagarEntradas();
-	
 	retropropagarError(objetivo);
-	
 	acumularCambio();
-	
 	ajustarPesos();
-;
+
 }
 
 // ------------------------------
@@ -407,9 +402,9 @@ Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
 	leer >> data->nNumSalidas;
 	
 	leer >> data->nNumPatrones;
-	std::cout<<"Entradas:" << data->nNumEntradas<< std::endl;
-	std::cout<<"Salidas:" << data->nNumSalidas<< std::endl;
-	std::cout<<"Patrones:" << data->nNumPatrones<< std::endl;
+	std::cout<<"  -->Entradas:" << data->nNumEntradas<< std::endl;
+	std::cout<<"  -->Salidas:" << data->nNumSalidas<< std::endl;
+	std::cout<<"  -->Patrones:" << data->nNumPatrones<< std::endl;
 	data->entradas = (double **)malloc (data->nNumPatrones*sizeof(double *));
 
 	for (int i=0;i<data->nNumPatrones;i++)//Entradas
@@ -464,7 +459,20 @@ void PerceptronMulticapa::entrenarOnline(Datos* pDatosTrain) {
 // ------------------------------
 // Probar la red con un conjunto de datos y devolver el error MSE cometido
 double PerceptronMulticapa::test(Datos* pDatosTest) {
-	return -1.0;
+
+	double ERROR = 0.0;
+
+	for(int i=0; i<pDatosTest->nNumPatrones; i++)
+	{
+		// Cargamos las entradas y propagamos el valor
+		alimentarEntradas(pDatosTest->entradas[i]);
+		propagarEntradas();
+		ERROR += calcularErrorSalida(pDatosTest->salidas[i]);
+
+	}
+
+	ERROR /= pDatosTest->nNumPatrones;
+	return ERROR;
 }
 
 // OPCIONAL - KAGGLE
@@ -547,13 +555,13 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 		// Por lo demás, la forma en que se debe comprobar la condición de parada es similar
 		// a la que se ha aplicado más arriba para el error de entrenamiento
 		
-		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
+		//cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
 
 	} while (countTrain<maxiter);
 
 	cout << "PESOS DE LA RED" << endl;
 	cout << "===============" << endl;
-	imprimirRed();
+	//imprimirRed();
 
 	cout << "Salida Esperada Vs Salida Obtenida (test)" << endl;
 	cout << "=========================================" << endl;

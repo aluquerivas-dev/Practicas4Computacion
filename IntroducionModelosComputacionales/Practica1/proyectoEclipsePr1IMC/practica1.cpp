@@ -139,7 +139,7 @@ int main(int argc, char **argv) {
     
         pDatosTrain = mlp.leerDatos(tvalue);
     
-        pDatosTest = mlp.leerDatos(tvalue);
+        pDatosTest = mlp.leerDatos(Tvalue);
    
         if(pDatosTrain == NULL || pDatosTest == NULL)
         {
@@ -158,8 +158,7 @@ int main(int argc, char **argv) {
         topologia[0] = pDatosTrain->nNumEntradas;
         for(int i=1; i<(numcapasOcultas+1); i++)
         	topologia[i] = numneucaOcultas;
-        topologia[numneucaOcultas+1] = pDatosTrain->nNumSalidas;
-      
+        topologia[numcapasOcultas+1] = pDatosTrain->nNumSalidas;
         // Inicializar red con vector de topología
         mlp.inicializar(numcapasOcultas+2,topologia);        //------>
 
@@ -175,7 +174,7 @@ int main(int argc, char **argv) {
         	cout << "SEMILLA " << semillas[i] << endl;
         	cout << "**********" << endl;
     		srand(semillas[i]);
-       
+        
     		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
