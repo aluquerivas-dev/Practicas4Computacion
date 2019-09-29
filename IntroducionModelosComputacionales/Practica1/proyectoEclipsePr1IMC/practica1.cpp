@@ -175,7 +175,7 @@ int main(int argc, char **argv) {
         	cout << "**********" << endl;
     		srand(semillas[i]);
         
-    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
+    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones*pDatosTrain->nNumPatrones,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
             // (Opcional - Kaggle) Guardamos los pesos cada vez que encontremos un modelo mejor.
@@ -192,6 +192,27 @@ int main(int argc, char **argv) {
         double mediaErrorTrain = 0, desviacionTipicaErrorTrain = 0;
         
         // Calcular medias y desviaciones típicas de entrenamiento y test
+        //Las calculamos
+            for(int i=0; i<5; i++)
+            {
+                mediaErrorTrain += erroresTrain[i];
+                mediaErrorTest += erroresTest[i];
+            }
+            mediaErrorTest /= 5;
+            mediaErrorTrain /= 5;
+
+            //Desviacion tipica
+            double auxTest = 0.0, auxTrain=0.0;
+
+            for(int i=0; i<5; i++){
+                auxTest += pow(erroresTest[i] - mediaErrorTest,2);
+                auxTrain += pow(erroresTrain[i] - mediaErrorTrain, 2);
+            }
+            desviacionTipicaErrorTest = sqrt(0.25*auxTest);
+            desviacionTipicaErrorTrain = sqrt(0.25*auxTrain);
+
+
+        //Calculadas
 
         cout << "INFORME FINAL" << endl;
         cout << "*************" << endl;

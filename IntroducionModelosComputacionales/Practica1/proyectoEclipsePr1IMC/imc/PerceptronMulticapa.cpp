@@ -318,6 +318,7 @@ void PerceptronMulticapa::ajustarPesos() {
 	double _deltaW,_ultimoDeltaW;
 	for(int i=1; i<nNumCapas; i++)
 	{
+		
 		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
 		{
 			for(int k=0; k<pCapas[i-1].nNumNeuronas+1; k++)
@@ -327,7 +328,11 @@ void PerceptronMulticapa::ajustarPesos() {
 				_ultimoDeltaW = pCapas[i].pNeuronas[j].ultimoDeltaW[k];
 
 				pCapas[i].pNeuronas[j].w[k] -= dEta * _deltaW + dMu * dEta * _ultimoDeltaW;
+
+				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
+
 			}
+			
 
 		}
 	}
