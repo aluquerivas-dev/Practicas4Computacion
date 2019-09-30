@@ -175,7 +175,7 @@ int main(int argc, char **argv) {
         	cout << "**********" << endl;
     		srand(semillas[i]);
         
-    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones*pDatosTrain->nNumPatrones,&(erroresTrain[i]),&(erroresTest[i]));
+    		mlp.ejecutarAlgoritmoOnline(pDatosTrain,pDatosTest,numIteraciones,&(erroresTrain[i]),&(erroresTest[i]));
     		cout << "Finalizamos => Error de test final: " << erroresTest[i] << endl;
 
             // (Opcional - Kaggle) Guardamos los pesos cada vez que encontremos un modelo mejor.

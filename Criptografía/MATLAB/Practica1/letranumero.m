@@ -1,6 +1,6 @@
 function V=letranumero(texto)
 TAM=size(texto);
-texto=lower(texto)
+texto=lower(texto);
 alfabeto='abcdefghijklmnnopqrstuvwxyz';
 alfabeto(15)=char(241);
 %V=zeros(1,TAM(2));
