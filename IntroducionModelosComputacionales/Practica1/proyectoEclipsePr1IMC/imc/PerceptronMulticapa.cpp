@@ -326,7 +326,7 @@ void PerceptronMulticapa::ajustarPesos() {
 				_deltaW = pCapas[i].pNeuronas[j].deltaW[k];
 
 				_ultimoDeltaW = pCapas[i].pNeuronas[j].ultimoDeltaW[k];
-
+				dEta=pow(dDecremento,(nNumCapas-1-i)*dEta);
 				pCapas[i].pNeuronas[j].w[k] -= dEta * _deltaW + dMu * dEta * _ultimoDeltaW;
 
 				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
@@ -519,17 +519,54 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	pesosAleatorios();
 
 	double minTrainError = 0;
+	double minValError = 0;
 	int numSinMejorar;
+	int numSinMejorarValidation;
 	double testError = 0;
+	double testValidation = 0;
 
 	double validationError=0.0;
 
 	// Generar datos de validación
-	/*
 	if(dValidacion > 0 && dValidacion < 1){
+		int nNumVal = dValidacion * pDatosTrain->nNumPatrones;
+		int * vector = vectorAleatoriosEnterosSinRepeticion(0,pDatosTrain->nNumPatrones,nNumVal);
+		Datos * validationData = new Datos();
+		validationData->nNumEntradas = pDatosTrain->nNumEntradas;
+		validationData->nNumSalidas = pDatosTrain->nNumSalidas;
+		validationData->nNumPatrones = nNumVal;
+
+		validationData->entradas = (double **)calloc (validationData->nNumPatrones,sizeof(double *));
+
+		for (int i=0;i<validationData->nNumPatrones;i++)//Entradas
+			validationData->entradas[i] = (double *) calloc (validationData->nNumEntradas,sizeof(double));
+
+		validationData->salidas = (double **)calloc (validationData->nNumPatrones,sizeof(double *));
+	
+		for (int i=0;i<validationData->nNumPatrones;i++)//Salidas
+			validationData->salidas[i] = (double *) calloc (validationData->nNumSalidas,sizeof(double));
+
 		
+		for(int i = 0; i < validationData->nNumPatrones; i++)
+		{
+			
+			//Entradas
+			for(int X = 0; X < validationData->nNumEntradas; X++)
+			{
+				validationData->entradas[i][X] = pDatosTrain->entradas[vector[i]][X];
+			}
+			
+			//Salidas
+			for(int Y = 0; Y < validationData->nNumSalidas; Y++)
+			{
+				validationData->salidas[i][Y] = pDatosTrain->salidas[vector[i]][Y];
+			}
+			
+			
+		}
+		validationError =test(validationData);
+		getchar(); 
 	}
-	*/
 
 
 	// Aprendizaje del algoritmo
@@ -537,17 +574,20 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 
 		entrenarOnline(pDatosTrain);
 		double trainError = test(pDatosTrain);
-		if(countTrain==0 || trainError < minTrainError){
+		if(countTrain==0 || trainError < minTrainError || validationError < minValError){
 			minTrainError = trainError;
+			validationError = minValError;
 			copiarPesos();
 			numSinMejorar = 0;
-		}
+			numSinMejorarValidation = 0;
+		}else if((validationError-minValError) < 0.00001)
+			numS
 		else if( (trainError-minTrainError) < 0.00001)
-			numSinMejorar = 0;
+			numSinMejorarValidation++;
 		else
 			numSinMejorar++;
 
-		if(numSinMejorar==50){
+		if(numSinMejorar==50 || numSinMejorarValidation==50){
 			cout << "Salida porque no mejora el entrenamiento!!"<< endl;
 			restaurarPesos();
 			countTrain = maxiter;
