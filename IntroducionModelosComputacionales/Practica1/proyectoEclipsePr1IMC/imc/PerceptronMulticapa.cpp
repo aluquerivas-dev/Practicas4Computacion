@@ -345,7 +345,7 @@ void PerceptronMulticapa::imprimirRed() {
 	//Se omite la capa 0, ya que es la de entrada.
 	for (int i = 1; i < nNumCapas; i++)
 	{
-		cout<<"Capa("<<i<<")\n";
+		cout<<"------Capa("<<i<<")------\n";
 		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 		{
 			//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
@@ -514,7 +514,7 @@ void PerceptronMulticapa::predecir(Datos* pDatosTest)
 void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * pDatosTest, int maxiter, double *errorTrain, double *errorTest)
 {
 	int countTrain = 0;
-
+	Datos * validationData;
 	// Inicialización de pesos
 	pesosAleatorios();
 
@@ -531,7 +531,7 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	if(dValidacion > 0 && dValidacion < 1){
 		int nNumVal = dValidacion * pDatosTrain->nNumPatrones;
 		int * vector = vectorAleatoriosEnterosSinRepeticion(0,pDatosTrain->nNumPatrones,nNumVal);
-		Datos * validationData = new Datos();
+		validationData = new Datos();
 		validationData->nNumEntradas = pDatosTrain->nNumEntradas;
 		validationData->nNumSalidas = pDatosTrain->nNumSalidas;
 		validationData->nNumPatrones = nNumVal;
@@ -562,32 +562,51 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 				validationData->salidas[i][Y] = pDatosTrain->salidas[vector[i]][Y];
 			}
 			
-			
 		}
 		validationError =test(validationData);
-		getchar(); 
+
 	}
 
 
 	// Aprendizaje del algoritmo
 	do {
 
+		entrenarOnline(validationData);
 		entrenarOnline(pDatosTrain);
+		validationError = test(validationData);
 		double trainError = test(pDatosTrain);
-		if(countTrain==0 || trainError < minTrainError || validationError < minValError){
+
+		if(dValidacion > 0 && dValidacion < 1){
+			if( countTrain==0 || validationError < minValError){
+				minValError = minValError;
+				numSinMejorarValidation = 0;
+			}else if( (validationError-minValError) < 0.00001)
+			{
+				numSinMejorarValidation=0;
+			}
+			else{
+				numSinMejorarValidation=numSinMejorarValidation+1;
+			}
+
+			if(numSinMejorarValidation==50){
+				cout << "Salida porque no mejora el entrenamiento!!"<< endl;
+				break;
+			}
+		}
+
+
+
+
+		if(countTrain==0 || trainError < minTrainError){
 			minTrainError = trainError;
-			validationError = minValError;
 			copiarPesos();
 			numSinMejorar = 0;
-			numSinMejorarValidation = 0;
-		}else if((validationError-minValError) < 0.00001)
-			numS
-		else if( (trainError-minTrainError) < 0.00001)
-			numSinMejorarValidation++;
+		}else if( (trainError-minTrainError) < 0.00001)
+			numSinMejorar=0;
 		else
 			numSinMejorar++;
 
-		if(numSinMejorar==50 || numSinMejorarValidation==50){
+		if(numSinMejorar==50){
 			cout << "Salida porque no mejora el entrenamiento!!"<< endl;
 			restaurarPesos();
 			countTrain = maxiter;
@@ -600,13 +619,13 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 		// Por lo demás, la forma en que se debe comprobar la condición de parada es similar
 		// a la que se ha aplicado más arriba para el error de entrenamiento
 		
-		//cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
+		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
 
 	} while (countTrain<maxiter);
 
 	cout << "PESOS DE LA RED" << endl;
 	cout << "===============" << endl;
-	//imprimirRed();
+	imprimirRed();
 
 	cout << "Salida Esperada Vs Salida Obtenida (test)" << endl;
 	cout << "=========================================" << endl;

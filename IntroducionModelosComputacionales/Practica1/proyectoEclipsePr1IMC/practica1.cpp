@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 
     // a: opción que requiere un argumento
     // a:: el argumento requerido es opcional
-    while ((c = getopt(argc, argv, "t:i::l::h::e::m::v::d::")) != -1)
+    while ((c = getopt(argc, argv, "t:i:l:h:e:m:v:d:")) != -1)
     {
         // Se han añadido los parámetros necesarios para usar el modo opcional de predicción (kaggle).
         // Añadir el resto de parámetros que sean necesarios para la parte básica de las prácticas.
@@ -165,7 +165,7 @@ int main(int argc, char **argv) {
        
 
         // Semilla de los números aleatorios
-        int semillas[] = {100,200,300,400,500};
+        int semillas[] = {1,2,3,4,5};
         double *erroresTest = new double[5];
         double *erroresTrain = new double[5];
         double mejorErrorTest = 1.0;
