@@ -316,18 +316,23 @@ void PerceptronMulticapa::acumularCambio() {
 // Actualizar los pesos de la red, desde la primera capa hasta la última
 void PerceptronMulticapa::ajustarPesos() {
 	double _deltaW,_ultimoDeltaW;
+	float eta = 0.0;
 	for(int i=1; i<nNumCapas; i++)
 	{
 		
 		for(int j=0; j<pCapas[i].nNumNeuronas; j++)
 		{
+			eta=this->dEta*pow(this->dDecremento, -(this->nNumCapas-1-i));
 			for(int k=0; k<pCapas[i-1].nNumNeuronas+1; k++)
 			{
 				_deltaW = pCapas[i].pNeuronas[j].deltaW[k];
 
 				_ultimoDeltaW = pCapas[i].pNeuronas[j].ultimoDeltaW[k];
-				dEta=pow(dDecremento,(nNumCapas-1-i)*dEta);
-				pCapas[i].pNeuronas[j].w[k] -= dEta * _deltaW + dMu * dEta * _ultimoDeltaW;
+				
+
+				pCapas[i].pNeuronas[j].w[k] -= eta * _deltaW + dMu * eta * _ultimoDeltaW;
+
+
 
 				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
 
@@ -530,12 +535,12 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	// Generar datos de validación
 	if(dValidacion > 0 && dValidacion < 1){
 		int nNumVal = dValidacion * pDatosTrain->nNumPatrones;
-		int * vector = vectorAleatoriosEnterosSinRepeticion(0,pDatosTrain->nNumPatrones,nNumVal);
+		int * vector = vectorAleatoriosEnterosSinRepeticion(0,pDatosTrain->nNumPatrones-1,nNumVal);
 		validationData = new Datos();
 		validationData->nNumEntradas = pDatosTrain->nNumEntradas;
 		validationData->nNumSalidas = pDatosTrain->nNumSalidas;
 		validationData->nNumPatrones = nNumVal;
-
+		
 		validationData->entradas = (double **)calloc (validationData->nNumPatrones,sizeof(double *));
 
 		for (int i=0;i<validationData->nNumPatrones;i++)//Entradas
@@ -547,24 +552,31 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 			validationData->salidas[i] = (double *) calloc (validationData->nNumSalidas,sizeof(double));
 
 		
-		for(int i = 0; i < validationData->nNumPatrones; i++)
+		for(int i = 0; i < nNumVal; i++)
 		{
 			
 			//Entradas
 			for(int X = 0; X < validationData->nNumEntradas; X++)
 			{
-				validationData->entradas[i][X] = pDatosTrain->entradas[vector[i]][X];
-			}
+	
 			
+				validationData->entradas[i][X] = pDatosTrain->entradas[vector[i]][X];
+				
+			}
 			//Salidas
 			for(int Y = 0; Y < validationData->nNumSalidas; Y++)
 			{
+				
 				validationData->salidas[i][Y] = pDatosTrain->salidas[vector[i]][Y];
+				
 			}
-			
-		}
-		validationError =test(validationData);
 
+		
+	
+		}
+		
+		validationError =test(validationData);
+	
 	}
 
 
