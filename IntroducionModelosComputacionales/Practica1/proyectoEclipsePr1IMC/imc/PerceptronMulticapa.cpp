@@ -145,6 +145,7 @@ void PerceptronMulticapa::alimentarEntradas(double* input) {
 	for (int i = 0; i <pCapas[0].nNumNeuronas; i++)
 	{
 		pCapas[0].pNeuronas[i].x=input[i];
+		pCapas[0].pNeuronas[i].dX=input[i];
 	}
 	
 }
@@ -383,6 +384,7 @@ void PerceptronMulticapa::simularRedOnline(double* entrada, double* objetivo) {
 			//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
 			for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
 			{
+				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
 				pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
 
 			}
@@ -575,22 +577,25 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	
 		}
 		
-		validationError =test(validationData);
-	
+		
+		validationError = test(validationData);
 	}
 
-
+		std::ofstream leer;
+		leer.open("log.txt",ios::app);
 	// Aprendizaje del algoritmo
 	do {
 
-		entrenarOnline(validationData);
+		
 		entrenarOnline(pDatosTrain);
-		validationError = test(validationData);
 		double trainError = test(pDatosTrain);
-
-		if(dValidacion > 0 && dValidacion < 1){
+	   
+		if(dValidacion > 0.0 && dValidacion < 1.0){
+			entrenarOnline(validationData);
+			validationError = test(validationData);
 			if( countTrain==0 || validationError < minValError){
-				minValError = minValError;
+				copiarPesos();
+				minValError = validationError;
 				numSinMejorarValidation = 0;
 			}else if( (validationError-minValError) < 0.00001)
 			{
@@ -602,6 +607,8 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 
 			if(numSinMejorarValidation==50){
 				cout << "Salida porque no mejora el entrenamiento!!"<< endl;
+				restaurarPesos();
+				countTrain = maxiter;
 				break;
 			}
 		}
@@ -630,11 +637,15 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 		// OJO: en este caso debemos guardar el error de validación anterior, no el mínimo
 		// Por lo demás, la forma en que se debe comprobar la condición de parada es similar
 		// a la que se ha aplicado más arriba para el error de entrenamiento
+		double testError = test(pDatosTest);
 		
+		leer<<trainError<<" "<<validationError<<" "<<testError<<endl;
+
+
 		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de validación: " << validationError << endl;
 
 	} while (countTrain<maxiter);
-
+	leer.close();
 	cout << "PESOS DE LA RED" << endl;
 	cout << "===============" << endl;
 	imprimirRed();

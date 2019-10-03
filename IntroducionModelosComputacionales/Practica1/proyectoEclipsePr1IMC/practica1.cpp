@@ -208,8 +208,8 @@ int main(int argc, char **argv) {
                 auxTest += pow(erroresTest[i] - mediaErrorTest,2);
                 auxTrain += pow(erroresTrain[i] - mediaErrorTrain, 2);
             }
-            desviacionTipicaErrorTest = sqrt(0.25*auxTest);
-            desviacionTipicaErrorTrain = sqrt(0.25*auxTrain);
+            desviacionTipicaErrorTest = sqrt(auxTest);
+            desviacionTipicaErrorTrain = sqrt(auxTrain);
 
 
         //Calculadas
