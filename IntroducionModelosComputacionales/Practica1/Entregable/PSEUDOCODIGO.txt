@@ -1,0 +1,135 @@
+hilite.me
+-----Algoritmo de retropropagación-----
+INICIO
+    iniciarPesosAleatorios()
+        REPETIR
+            PARA cada patrón con entradas x, y salidas d
+                aplicarCambiosPatrones()
+                alimentarEntradas()
+                propagarEntradas() 
+                retropropagarError() 
+                acumularCambio() 
+                ajustarPesos()
+            FIN PARA
+        HASTA(CondicionParada)
+FIN
+
+----- function iniciarPesosAleatorios() -----
+
+INICIO
+
+    PARA i = 1 hasta numeroCapas HACER
+        PARA j = 0 hasta NeuronasCapa[i] HACER
+            PARA k = 0 hasta neuronasCapa[i-1]+Sesgo HACER
+
+                CAPA[i].NEURONAS[j].w[k] = aleatorio[-1,1];           
+				CAPA[i].NEURONAS[j].wCopia[k] = aleatorio[-1,1]; 
+
+            FIN PARA
+        FIN PARA
+    FIN PARA
+
+FIN
+
+----- function alimentarEntradas() -----
+
+INICIO
+
+    input[]
+        PARA i = 0 hasta neuronasCapa[0] HACER
+            CAPA[0].NEURONA[i].x[k] = input[i]
+            CAPA[0].NEURONA[i].dX[k] input[i]
+        FIN PARA
+
+FIN
+
+
+----- function propagarEntradas() -----
+
+INICIO
+    ACUMULADOR = 0.0
+
+    PARA i = 1 hasta numeroCapas HACER
+        PARA j = 0 hasta NeuronasCapa[i] HACER
+            PARA k = 1 hasta neuronasCapa[i-1]+Sesgo HACER
+
+            ACUMULADOR = ACUMULADOR + (CAPA[i].NEURONAS[j].w[k] * (CAPA[i-1].NEURONAS[k-1].x)      
+			CAPA[i].NEURONAS[j].wCopia[k] = aleatorio[-1,1]; 
+            
+            FIN PARA
+
+            ACUMULADOR = ACUMULADOR + CAPA[i].NEURONAS[j].w[0]
+            CAPA[i].NEURONAS[j].x = (1/(1+exponente((-1)*ACUMULADOR)))
+            ACUMULADOR = 0.0
+
+        FIN PARA
+    FIN PARA
+
+FIN
+
+----- function retropropagarError() -----
+
+INICIO
+
+ACUMULADOR
+
+    PARA i = numeroCapas-2 hasta 0 HACER
+        PARA j = 0 hasta NeuronasCapa[i] HACER
+            PARA k = 0 hasta NeuronasCapa[i+1] HACER
+            
+            ACUMULADOR = ACUMULADOR + ( CAPA[i+1].NEURONA[k].w[j+1] * CAPA[i+1].NEURONA[k].dX )
+
+            FIN PARA
+
+            CAPA[i].NEURONA[j].dX = ACUMULADOR * CAPA[i].NEURONA[j].x * (1-CAPA[i].NEURONA[j].x)
+        
+        FIN PARA
+    FIN PARA
+
+
+FIN
+
+----- function acumularCambio() -----
+
+INICIO
+
+    PARA i = 1 hasta numeroCapas HACER
+            PARA j = 0 hasta NeuronasCapa[i] HACER
+                PARA k = 1 hasta NeuronasCapa[i-1]+1 HACER
+                
+                    CAPA[i].NEURONA[j].deltaW[k] +=  CAPA[i].NEURONA[j].dX * CAPA[i-1].NEURONA[k-1].x;    
+
+                FIN PARA  
+                
+                CAPA[i].NEURONA[j].deltaW[0] += CAPA[i].NEURONA[j].dX;          
+            FIN PARA
+        FIN PARA
+
+FIN
+
+----- function ajustarPesos() -----	
+
+INICIO
+
+    DELTA_W,ULTIMODELTA_W,ETA
+
+    PARA i = 1 hasta numeroCapas HACER
+            PARA j = 0 hasta NeuronasCapa[i] HACER
+
+                ETA = ETA_CLASE * POTENCIA(DECREMENTO_CLAE, -(numeroCAPAS-1-i));
+                
+                PARA k = 1 hasta NeuronasCapa[i-1]+1 HACER
+
+                    DELTA_W = CAPA[i].NEURONA[j].deltaW[k];
+
+				    ULTIMODELTA_W = CAPA[i].NEURONA[j].ultimoDeltaW[k]
+	
+				    CAPA[i].NEURONA[j].w[k] = CAPA[i].NEURONA[j].w[k] - ( ETA * DELTA_W + FACTOMOMENTO_CLASE * ETA * ULTIMODELTA_W )
+
+				    CAPA[i].NEURONA[j].ultimoDeltaW[k] = CAPA[i].NEURONA[j].deltaW[k];
+    
+                FIN PARA         
+            FIN PARA
+        FIN PARA    
+
+FIN
