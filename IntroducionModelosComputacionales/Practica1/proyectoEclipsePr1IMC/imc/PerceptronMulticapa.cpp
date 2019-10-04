@@ -582,7 +582,7 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	}
 
 		std::ofstream leer;
-		leer.open("log.txt",ios::app);
+		leer.open("log.txt");
 	// Aprendizaje del algoritmo
 	do {
 
