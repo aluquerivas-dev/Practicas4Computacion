@@ -472,6 +472,8 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 
 	//Entradas son el Train->Entradas , Objetivo es el Train->Salidas, del dataset leido por fichero
 	//Se omite la capa 0, ya que es la de entrada.	
+	
+	//Comprobamos si el algoritmo es online
 	for (int i = 1; i < nNumCapas; i++)
 	{
 	
@@ -489,7 +491,6 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 		}
 		
 	}
-	//Comprobamos si el algoritmo es online
 	if(bOnline){
 
 	alimentarEntradas(entrada);
@@ -567,8 +568,7 @@ Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
 // ------------------------------
 // Entrenar la red para un determinado fichero de datos (pasar una vez por todos los patrones)
 void PerceptronMulticapa::entrenar(Datos* pDatosTrain, int funcionError) {
-
-
+	
 	for(int i=0; i<pDatosTrain->nNumPatrones; i++){
 			simularRed(pDatosTrain->entradas[i], pDatosTrain->salidas[i],funcionError);
 		}
