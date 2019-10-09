@@ -530,8 +530,6 @@ void PerceptronMulticapa::ejecutarAlgoritmoOnline(Datos * pDatosTrain, Datos * p
 	int numSinMejorar;
 	int numSinMejorarValidation;
 	double testError = 0;
-	double testValidation = 0;
-
 	double validationError=0.0;
 
 	// Generar datos de validación
