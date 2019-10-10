@@ -472,27 +472,26 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 
 	//Entradas son el Train->Entradas , Objetivo es el Train->Salidas, del dataset leido por fichero
 	//Se omite la capa 0, ya que es la de entrada.	
-	
-	//Comprobamos si el algoritmo es online
 	for (int i = 1; i < nNumCapas; i++)
-	{
-	
-		for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 		{
-			//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
-			for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
+		
+			for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
 			{
-				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
-				pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
+				//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
+				for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
+				{
+					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
+					pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
+
+				}
+			
 
 			}
-		
-
+			
 		}
-		
-	}
+	//Comprobamos si el algoritmo es online
+	
 	if(bOnline){
-
 	alimentarEntradas(entrada);
 	propagarEntradas();
 	retropropagarError(objetivo,funcionError);
@@ -500,7 +499,6 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 	ajustarPesos();
 
 	}else{
-		
 	alimentarEntradas(entrada);
 	propagarEntradas();
 	retropropagarError(objetivo,funcionError);
@@ -568,7 +566,6 @@ Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
 // ------------------------------
 // Entrenar la red para un determinado fichero de datos (pasar una vez por todos los patrones)
 void PerceptronMulticapa::entrenar(Datos* pDatosTrain, int funcionError) {
-	
 	for(int i=0; i<pDatosTrain->nNumPatrones; i++){
 			simularRed(pDatosTrain->entradas[i], pDatosTrain->salidas[i],funcionError);
 		}
