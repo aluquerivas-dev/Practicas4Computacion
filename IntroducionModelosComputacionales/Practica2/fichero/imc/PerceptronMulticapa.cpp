@@ -339,20 +339,20 @@ void PerceptronMulticapa::retropropagarError(double* objetivo, int funcionError)
 				{
 					if(funcionError==0)
 					{
-						ACC2 += (objetivo[i]-pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[j].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
+						ACC2 += (objetivo[j]-pCapas[nNumCapas-1].pNeuronas[j].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (1 - pCapas[nNumCapas-1].pNeuronas[j].x);
 					}else
 					{
-						ACC2 += (objetivo[i]/pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[j].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
+						ACC2 += (objetivo[j]/pCapas[nNumCapas-1].pNeuronas[j].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (1 - pCapas[nNumCapas-1].pNeuronas[j].x);
 					}
 
 				}else//Derivada de la salida (o j ) respecto a algo que est ́a por detras de cualquier neurona i que no sea j
 				{
 					if(funcionError==0)
 					{
-						ACC2 += (objetivo[i]-pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[j].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
+						ACC2 += (objetivo[j]-pCapas[nNumCapas-1].pNeuronas[j].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (0 - pCapas[nNumCapas-1].pNeuronas[j].x);
 					}else
 					{
-						ACC2 += (objetivo[i]/pCapas[nNumCapas-1].pNeuronas[i].x) * pCapas[nNumCapas-1].pNeuronas[j].x * (1 - pCapas[nNumCapas-1].pNeuronas[i].x);
+						ACC2 += (objetivo[j]/pCapas[nNumCapas-1].pNeuronas[j].x) * pCapas[nNumCapas-1].pNeuronas[i].x * (0 - pCapas[nNumCapas-1].pNeuronas[j].x);
 					}
 
 				}
@@ -410,6 +410,7 @@ void PerceptronMulticapa::acumularCambio() {
 // ------------------------------
 // Actualizar los pesos de la red, desde la primera capa hasta la última
 void PerceptronMulticapa::ajustarPesos() {
+	
 
 	double _deltaW,_ultimoDeltaW;
 	float eta = 0.0;
@@ -425,12 +426,16 @@ void PerceptronMulticapa::ajustarPesos() {
 
 				_ultimoDeltaW = pCapas[i].pNeuronas[j].ultimoDeltaW[k];
 				
+				if(bOnline)//Ajuste de pesos para metodo online
+				{
+					pCapas[i].pNeuronas[j].w[k] -= eta * _deltaW + dMu * eta * _ultimoDeltaW;
+					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
+				}else{//Ajuste de pesos para metodo off-line, Como el error usado es un error medio,dividimos  el cambio realizado por el nmero de patrones de entrenamiento
 
-				pCapas[i].pNeuronas[j].w[k] -= eta * _deltaW + dMu * eta * _ultimoDeltaW;
-
-
-
-				pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
+					pCapas[i].pNeuronas[j].w[k] -= eta * (_deltaW/nNumPatronesTrain) + dMu * eta * (_ultimoDeltaW/nNumPatronesTrain);
+					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
+				}
+				
 
 			}
 			
@@ -472,7 +477,11 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 
 	//Entradas son el Train->Entradas , Objetivo es el Train->Salidas, del dataset leido por fichero
 	//Se omite la capa 0, ya que es la de entrada.	
-	for (int i = 1; i < nNumCapas; i++)
+	
+	//Comprobamos si el algoritmo es online
+	
+	if(bOnline){
+		for (int i = 1; i < nNumCapas; i++)
 		{
 		
 			for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
@@ -480,7 +489,6 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 				//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
 				for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
 				{
-					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
 					pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
 
 				}
@@ -489,9 +497,6 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 			}
 			
 		}
-	//Comprobamos si el algoritmo es online
-	
-	if(bOnline){
 	alimentarEntradas(entrada);
 	propagarEntradas();
 	retropropagarError(objetivo,funcionError);
@@ -566,6 +571,27 @@ Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
 // ------------------------------
 // Entrenar la red para un determinado fichero de datos (pasar una vez por todos los patrones)
 void PerceptronMulticapa::entrenar(Datos* pDatosTrain, int funcionError) {
+
+	if(!bOnline){
+
+		for (int i = 1; i < nNumCapas; i++)
+		{
+		
+			for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
+			{
+				//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
+				for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
+				{
+					pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
+
+				}
+			
+
+			}
+			
+		}
+	}
+
 	for(int i=0; i<pDatosTrain->nNumPatrones; i++){
 			simularRed(pDatosTrain->entradas[i], pDatosTrain->salidas[i],funcionError);
 		}
