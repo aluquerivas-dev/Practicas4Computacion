@@ -481,34 +481,34 @@ void PerceptronMulticapa::simularRed(double* entrada, double* objetivo, int func
 	//Comprobamos si el algoritmo es online
 	
 	if(bOnline){
-		for (int i = 1; i < nNumCapas; i++)
+		for(int capa=1;capa<nNumCapas;capa++)
 		{
-		
-			for (int j = 0; j < pCapas[i].nNumNeuronas; j++)
+			for(int neurona=0;neurona<pCapas[capa].nNumNeuronas;neurona++)
 			{
-				//pCapas[i-1].nNumNeuronas, porque en la capa 1, tendra un vector de pesos de tantas entradas en la capa 0
-				for (int k = 0; k < pCapas[i-1].nNumNeuronas+1; k++)
+				for(int k=0;k<pCapas[capa-1].nNumNeuronas;k++)
 				{
-					pCapas[i].pNeuronas[j].deltaW[k] = 0.0;
-
+					pCapas[capa].pNeuronas[neurona].ultimoDeltaW[k]=pCapas[capa].pNeuronas[neurona].deltaW[k];
+					pCapas[capa].pNeuronas[neurona].deltaW[k]=0;
 				}
-			
+
+				
+					pCapas[capa].pNeuronas[neurona].ultimoDeltaW[pCapas[capa-1].nNumNeuronas]=pCapas[capa].pNeuronas[neurona].deltaW[pCapas[capa-1].nNumNeuronas];
+					pCapas[capa].pNeuronas[neurona].deltaW[pCapas[capa-1].nNumNeuronas]=0;
+				
 
 			}
-			
 		}
-	alimentarEntradas(entrada);
-	propagarEntradas();
-	retropropagarError(objetivo,funcionError);
-	acumularCambio();
-	ajustarPesos();
-
-	}else{
-	alimentarEntradas(entrada);
-	propagarEntradas();
-	retropropagarError(objetivo,funcionError);
-	acumularCambio();
 	}
+
+	alimentarEntradas(entrada);
+	propagarEntradas();
+	retropropagarError(objetivo,funcionError);
+	acumularCambio();
+	if(bOnline)
+	{
+		ajustarPesos();
+	}
+
 
 }
 
