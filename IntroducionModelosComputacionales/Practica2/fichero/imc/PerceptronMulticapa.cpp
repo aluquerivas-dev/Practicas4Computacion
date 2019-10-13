@@ -411,7 +411,6 @@ void PerceptronMulticapa::acumularCambio() {
 // Actualizar los pesos de la red, desde la primera capa hasta la última
 void PerceptronMulticapa::ajustarPesos() {
 	
-
 	double _deltaW,_ultimoDeltaW;
 	float eta = 0.0;
 	for(int i=1; i<nNumCapas; i++)
@@ -432,7 +431,7 @@ void PerceptronMulticapa::ajustarPesos() {
 					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
 				}else{//Ajuste de pesos para metodo off-line, Como el error usado es un error medio,dividimos  el cambio realizado por el nmero de patrones de entrenamiento
 
-					pCapas[i].pNeuronas[j].w[k] -= eta * (_deltaW/nNumPatronesTrain) + dMu * eta * (_ultimoDeltaW/nNumPatronesTrain);
+					pCapas[i].pNeuronas[j].w[k] -= eta * (_deltaW/int(nNumPatronesTrain)) + dMu * eta * (_ultimoDeltaW/int(nNumPatronesTrain));
 					pCapas[i].pNeuronas[j].ultimoDeltaW[k] = pCapas[i].pNeuronas[j].deltaW[k];
 				}
 				
@@ -527,6 +526,7 @@ Datos* PerceptronMulticapa::leerDatos(const char *archivo) {
 	std::cout<<"  -->Entradas:" << data->nNumEntradas<< std::endl;
 	std::cout<<"  -->Salidas:" << data->nNumSalidas<< std::endl;
 	std::cout<<"  -->Patrones:" << data->nNumPatrones<< std::endl;
+	nNumPatronesTrain = data->nNumPatrones;
 	data->entradas = (double **)malloc (data->nNumPatrones*sizeof(double *));
 
 	for (int i=0;i<data->nNumPatrones;i++)//Entradas
