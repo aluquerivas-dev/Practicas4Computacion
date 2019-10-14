@@ -2,13 +2,13 @@ function inver = inv_modulo(A,m)
  [f,c]=size(A);
 if f~=c  
     inver=0;
-    disp('Es necesaria la entrada de una matriz cuadrada')
+    error('Es necesaria la entrada de una matriz cuadrada')
     return
 else
     
     if ~isequal(A,round(A) )
             inver =0;
-            disp('La matriz no tiene todos los elementos enteros')
+            error('La matriz no tiene todos los elementos enteros')
             return
     else
             A=mod(A,m);
@@ -21,9 +21,8 @@ else
                     inver=mod(INVERSO*X,m);
                     inver=round(inver);
             else
+                    error('La matriz notiene inversa en modulo -->> %d \n',m)
                     inver=0;
-                    disp('La matriz notiene inversa')
-                    return
             end
     end
 end
