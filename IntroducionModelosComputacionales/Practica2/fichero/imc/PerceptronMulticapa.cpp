@@ -711,12 +711,13 @@ double PerceptronMulticapa::testClassification(Datos* pDatosTest) {
 		}
 	}
 	// Se imprime la matriz de confusión generada
+	/*
 	for(int i=0; i<pDatosTest->nNumSalidas; i++) {
 		std::cout << "|";
 		for(int j=0; j<pDatosTest->nNumSalidas; j++)
 			std::cout << " " << MC[i][j];
 		std::cout << " |" << std::endl;
-	}
+	}*/
 	//Aplicamos al ccr el efecto porcentaje
 	ccr = 100 * ccr/pDatosTest->nNumPatrones;
 	return ccr;
@@ -793,6 +794,13 @@ void PerceptronMulticapa::ejecutarAlgoritmo(Datos * pDatosTrain, Datos * pDatosT
 		std::ofstream leer;
 		leer.open("log.txt");
 
+		if (!leer.is_open())
+ 		 {
+	  		cout<<"Error al abrir log.txt\n";
+		  	getchar();
+  		}
+		  
+
 	// Aprendizaje del algoritmo
 	do {
 
@@ -846,10 +854,12 @@ void PerceptronMulticapa::ejecutarAlgoritmo(Datos * pDatosTrain, Datos * pDatosT
 		countTrain++;
 
 		// Comprobar condiciones de parada de validación y forzar
-
+		leer<<testClassification(pDatosTrain)<<" "<<testClassification(pDatosTest)<<" "<<validationError<<endl;
+		 
 		cout << "Iteración " << countTrain << "\t Error de entrenamiento: " << trainError << "\t Error de test: " << testError << "\t Error de validacion: " << validationError << endl;
 
 	} while ( countTrain<maxiter );
+	leer.close();
 
 	if ( (numSinMejorarValidacion!=50) && (numSinMejorar!=50))
 		restaurarPesos();
