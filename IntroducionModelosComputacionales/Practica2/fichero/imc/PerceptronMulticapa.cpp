@@ -664,6 +664,8 @@ void PerceptronMulticapa::predecir(Datos* pDatosTest)
 double PerceptronMulticapa::testClassification(Datos* pDatosTest) {
 
 	double ccr = 0.0;
+	//vector auxiliar
+	std::vector<int> aux;
 	// Matriz de confusión
 	std::vector<std::vector<int> > MC(pDatosTest->nNumSalidas,std::vector<int>(pDatosTest->nNumSalidas,0));
 	//Se debe comparar el indice del valor maximo del vector dP,
@@ -704,10 +706,12 @@ double PerceptronMulticapa::testClassification(Datos* pDatosTest) {
 		}
 		// Se añade el patrón a la matriz de confusión
         MC[indiceOp][indiceDp]++;
-		//Si son el mismo se demuesra que la neurona con mayor activacion e indiceOP es igual a la salida del test con indiceDP
+		//Si son el mismo se demuestra que la neurona con mayor activacion e indiceOP es igual a la salida del test con indiceDP
 		//La red neuronal ha sido capaz de acertar con la clasificación.
 		if(indiceOp == indiceDp){
 			ccr++;
+		}else{
+			aux.push_back(i);
 		}
 	}
 	// Se imprime la matriz de confusión generada
@@ -717,8 +721,15 @@ double PerceptronMulticapa::testClassification(Datos* pDatosTest) {
 		for(int j=0; j<pDatosTest->nNumSalidas; j++)
 			std::cout << " " << MC[i][j];
 		std::cout << " |" << std::endl;
-	}*/
-	//Aplicamos al ccr el efecto porcentaje
+	}
+	cout<<endl;
+	// Se imprime la el vector donde estan los patrones mal predichos
+	for(int i=0; i<aux.size(); i++) {
+	std::cout << " " << aux[i];
+		
+	}
+	cout<<endl;
+	//Aplicamos al ccr el efecto porcentaje*/
 	ccr = 100 * ccr/pDatosTest->nNumPatrones;
 	return ccr;
 }
