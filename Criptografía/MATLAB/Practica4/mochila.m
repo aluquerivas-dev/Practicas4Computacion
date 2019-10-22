@@ -37,7 +37,7 @@ function valida = mochila(s)
     Y = sort(s);
     if sum(X==Y) ~= size(s,2)
         valida = 0;
-        disp('la mochila no es supercreciente, sus elementos no estan ordenados en orden creciente')
+        %disp('la mochila no es supercreciente, sus elementos no estan ordenados en orden creciente')
         return
     end
     %Fin Comprobar Orden
