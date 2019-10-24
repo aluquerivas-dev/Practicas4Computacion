@@ -23,7 +23,7 @@ function v=sol_mochila (s,obj)
     end
    if obj == 0
        if mochila(s)==1
-           disp('la mochila es supercreciente')
+           %disp('la mochila es supercreciente')
        else
            
            X = s;

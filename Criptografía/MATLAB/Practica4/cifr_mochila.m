@@ -7,7 +7,7 @@ function cifrado=cifr_mochila(s,texto)
 ascii = double(texto);
 %Con dec2bin convertimos ese texto ascii en binarios de 8 elementos.
 bin = dec2bin(ascii,8);
-bin = reshape(bin', 1, [])
+bin = reshape(bin', 1, []);
 
 if((mod(size(bin,2), length(s)) ~= 0))
     %Si no es posible de dividir se añaden 1 al final de la
