@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50dd10b2-266b-48ad-a693-81e53508c77b" name="Default Changelist" comment="" />
+    <list default="true" id="50dd10b2-266b-48ad-a693-81e53508c77b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Criptografía/MATLAB/AlbertoLuqueRivas_i62luria_P4.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Practica3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Practica3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATASETS_OTROS/labor.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATASETS_OTROS/soybean.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATASETS_OTROS/supermarket.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATASETS_OTROS/vote.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DATASETS_OTROS/weather.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datasets/cpu.arff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prueba.py" beforeDir="false" afterPath="$PROJECT_DIR$/prueba.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
