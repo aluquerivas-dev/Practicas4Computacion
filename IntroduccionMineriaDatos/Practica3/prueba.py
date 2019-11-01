@@ -18,15 +18,43 @@ from scipy.io import arff
 import pandas as pd
 from os import listdir
 import random
+from scipy.stats import wilcoxon
+def wilcoxonTest(arrayX,arrayY):
+    print('Test de Wilcoxon value: '+str(wilcoxon(arrayX,arrayY)))
+
 def predecir(aux,clasificador):
     array = clasificador.predict([aux])
     print('Clase predicha KNN')
     print(target[1][array][0])
     print('----------------')
 
+def pintarGraficos(matrix,titulo):
+    fig = plt.figure(u'Gráfica de barras')  # Figure
+    ax = fig.add_subplot(111)  # Axes
+
+    x1 = ['Kdia', 'Kgla', 'Kion', 'Kiri','Kcpu','Kcon', 'Ksegc','Ksegt','Kwe','Kflo']
+    x2 = ['Sdia', 'Sgla', 'Sion', 'Siri','Scpu','Scon', 'Ssegc','Ssegt','Swe','Sflo']
+    x3 = ['Ddia', 'Dgla', 'Dion', 'Diri','Dcpu','Dcon', 'Dsegc','Dsegt','Dwe','Dflo']
+    y1 = []
+    y2 = []
+    y3 = []
+    for columna in range(1, len(lista_datasets) + 1):
+        y1.append(matrix[1][columna])
+        y2.append(matrix[2][columna])
+        y3.append(matrix[3][columna])
+
+    plt.bar(x1, y1, color='g', width=0.7, align='center')
+    plt.bar(x2, y2, color='b', width=0.7, align='center')
+    plt.bar(x3, y3, color='r', width=0.7, align='center')
+    plt.xticks(rotation='vertical')
+    plt.legend(['KNN', 'SVM', 'DTC'])
+    plt.title(titulo)
+    plt.show()
+    print('\n\n\n')
+
 #MAIN
-matrix_ccr = [['---',0,0,0,0],['KNN',0.0,0.0,0.0,0.0],['SVM',0.0,0.0,0.0,0.0],['DTC',0.0,0.0,0.0,0.0]]
-matrix_error = [['---',0,0,0,0],['KNN',0.0,0.0,0.0,0.0],['SVM',0.0,0.0,0.0,0.0],['DTC',0.0,0.0,0.0,0.0]]
+matrix_ccr   = [['---',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['KNN',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['SVM',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['DTC',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
+matrix_error = [['---',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['KNN',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['SVM',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],['DTC',0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]]
 lista_datasets = listdir('./datasets/')
 ##Montar la matriz de CCR
 
@@ -52,22 +80,22 @@ for indice in lista_datasets:
 
     #Llamada y entrenamiento del algoritmo KNN
     print('|||||||||||||||||||||||||||||KNN||||||||||||||||||||||||||||||||||||')
-    knn = KNeighborsClassifier(n_neighbors=25)
+    knn = KNeighborsClassifier()
     knn.fit(X_train,Y_train)
     print('Porcentaje de bien clasificados KNN (\''+str(indice)+'\'): '+str(knn.score(X_test,Y_test)*100)+' %')
     print('Patron a clasificar del dataset('+str(indice_aleatorio)+')\n')
-    matrix_ccr[1][AUX] = round(knn.score(X_test,Y_test),10)
-    matrix_error[1][AUX] = round(1 - matrix_ccr[1][AUX],10)
+    matrix_ccr[1][AUX] = round(knn.score(X_test,Y_test),10)*100
+    matrix_error[1][AUX] = round(100 - matrix_ccr[1][AUX],10)
     predecir(patron_aleatorio,knn)
 
     #Llamada y entrenamiento algoritmo SVM
     print('|||||||||||||||||||||||||||||SVM||||||||||||||||||||||||||||||||||||')
-    svm = SVC(gamma='auto')
+    svm = SVC()
     svm.fit(X_train, Y_train)
     print('Porcentaje de bien clasificados SVM (\''+str(indice)+'\'): '+str(svm.score(X_test,Y_test)*100)+' %')
     print('Patron a clasificar del dataset(' + str(indice_aleatorio) + ')\n')
-    matrix_ccr[2][AUX] = round(svm.score(X_test,Y_test),10)
-    matrix_error[2][AUX] = round(1 - matrix_ccr[2][AUX],10)
+    matrix_ccr[2][AUX] = round(svm.score(X_test,Y_test),10)*100
+    matrix_error[2][AUX] = round(100 - matrix_ccr[2][AUX],10)
     predecir(patron_aleatorio,svm)
 
     # Llamada y entrenamiento algoritmo DTC
@@ -76,8 +104,8 @@ for indice in lista_datasets:
     dtc.fit(X_train, Y_train)
     print('Porcentaje de bien clasificados DTC (\'' + str(indice) + '\'): ' + str(dtc.score(X_test, Y_test) * 100) + ' %')
     print('Patron a clasificar del dataset(' + str(indice_aleatorio) + ')\n')
-    matrix_ccr[3][AUX] = round(dtc.score(X_test,Y_test),10)
-    matrix_error[3][AUX] = round(1 - matrix_ccr[3][AUX],10)
+    matrix_ccr[3][AUX] = round(dtc.score(X_test,Y_test),10)*100
+    matrix_error[3][AUX] = round(100 - matrix_ccr[3][AUX],10)
     predecir(patron_aleatorio, dtc)
     AUX = AUX + 1
 print('\n\n\n')
@@ -88,41 +116,24 @@ print('Error de las instancias: '+str(lista_datasets))
 print(np.array(matrix_error))
 
 print('----------------------------GRAFICO COMPARATIVO CCR----------------------------')
-fig = plt.figure(u'Gráfica de barras') # Figure
-ax = fig.add_subplot(111) # Axes
-
-x1 = ['K dia','K gla','K ion','K  iri']
-y1 = [matrix_ccr[1][1],matrix_ccr[1][2],matrix_ccr[1][3],matrix_ccr[1][4]]
-x2 = ['S dia','S gla','S ion','S  iri']
-y2 = [matrix_ccr[2][1],matrix_ccr[2][2],matrix_ccr[2][3],matrix_ccr[2][4]]
-x3 = ['D dia','D gla','D ion','D  iri']
-y3 = [matrix_ccr[3][1],matrix_ccr[3][2],matrix_ccr[3][3],matrix_ccr[3][4]]
-
-
-plt.bar(x1, y1, color='g',width=0.7, align='center')
-plt.bar(x2, y2, color='b',width=0.7, align='center')
-plt.bar(x3, y3, color='r',width=0.7, align='center')
-plt.legend(['KNN','SVM','DTC'])
-plt.title('GRAFICO COMPARATIVO CCR')
-plt.show()
-print('\n\n\n')
-
+#pintarGraficos(matrix_ccr,'GRAFICO COMPARATIVO CCR')
 
 print('----------------------------GRAFICO COMPARATIVO ERROR----------------------------')
-fig = plt.figure(u'Gráfica de barras') # Figure
-ax = fig.add_subplot(111) # Axes
+#pintarGraficos(matrix_error,'GRAFICO COMPARATIVO ERROR')
 
-x1 = ['K dia','K gla','K ion','K  iri']
-y1 = [matrix_error[1][1],matrix_error[1][2],matrix_error[1][3],matrix_error[1][4]]
-x2 = ['S dia','S gla','S ion','S  iri']
-y2 = [matrix_error[2][1],matrix_error[2][2],matrix_error[2][3],matrix_error[2][4]]
-x3 = ['D dia','D gla','D ion','D  iri']
-y3 = [matrix_error[3][1],matrix_error[3][2],matrix_error[3][3],matrix_error[3][4]]
+arrayX = []
+arrayY = []
+for indice in range(1,10):
+    arrayX.append(matrix_ccr[1][indice])#KNN
+    arrayY.append(matrix_ccr[2][indice])#SVM
+
+wilcoxonTest(arrayX,arrayY)
 
 
-plt.bar(x1, y1, color='g',width=0.7, align='center')
-plt.bar(x2, y2, color='b',width=0.7, align='center')
-plt.bar(x3, y3, color='r',width=0.7, align='center')
-plt.legend(['KNN','SVM','DTC'])
-plt.title('GRAFICO COMPARATIVO ERROR')
-plt.show()
+
+
+
+
+'''print(m[1,1:])#KNN
+print(m[2,1:])#SVM
+print(m[3,1:])#DTC'''
