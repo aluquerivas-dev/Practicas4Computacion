@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import KFold
 from sklearn.svm import SVC
+from IPython.display import display
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import metrics
 import graphviz
@@ -14,13 +15,14 @@ from sklearn.externals.six import StringIO
 from IPython.display import Image
 from sklearn.metrics import mean_squared_error
 import pydotplus
+import ipywidgets as widgets
 from scipy.io import arff
 import pandas as pd
 from os import listdir
 import random
 from scipy.stats import wilcoxon
-def wilcoxonTest(arrayX,arrayY):
-    print('Test de Wilcoxon value: '+str(wilcoxon(arrayX,arrayY)))
+def wilcoxonTest(arrayX,arrayY,text):
+    print('Test de Wilcoxon '+text+' value: '+str(wilcoxon(arrayX,arrayY)))
 
 def predecir(aux,clasificador):
     array = clasificador.predict([aux])
@@ -108,32 +110,30 @@ for indice in lista_datasets:
     matrix_error[3][AUX] = round(100 - matrix_ccr[3][AUX],10)
     predecir(patron_aleatorio, dtc)
     AUX = AUX + 1
-print('\n\n\n')
-print('CCR de las instancias: '+str(lista_datasets))
-print(np.array(matrix_ccr))
-print('\n\n\n')
-print('Error de las instancias: '+str(lista_datasets))
-print(np.array(matrix_error))
+
+
+
+
 
 print('----------------------------GRAFICO COMPARATIVO CCR----------------------------')
-#pintarGraficos(matrix_ccr,'GRAFICO COMPARATIVO CCR')
+pintarGraficos(matrix_ccr,'GRAFICO COMPARATIVO CCR')
 
 print('----------------------------GRAFICO COMPARATIVO ERROR----------------------------')
-#pintarGraficos(matrix_error,'GRAFICO COMPARATIVO ERROR')
+pintarGraficos(matrix_error,'GRAFICO COMPARATIVO ERROR')
 
-arrayX = []
-arrayY = []
-for indice in range(1,10):
-    arrayX.append(matrix_ccr[1][indice])#KNN
-    arrayY.append(matrix_ccr[2][indice])#SVM
+matrix_ccr = pd.DataFrame(matrix_ccr)
+matrix_error = pd.DataFrame(matrix_error)
 
-wilcoxonTest(arrayX,arrayY)
+wilcoxonTest(matrix_ccr.loc[1,1:], matrix_ccr.loc[2,1:],'KNN vs SVM')
+wilcoxonTest(matrix_ccr.loc[1,1:], matrix_ccr.loc[3,1:],'KNN vs DTC')
+wilcoxonTest(matrix_ccr.loc[2,1:], matrix_ccr.loc[3,1:],'SVM vs DTC')
+# create output widgets
+
+print('\n\n\n')
+print('CCR de las instancias: '+str(lista_datasets))
+print(matrix_ccr.to_string())
+print('\n\n\n')
+print('Error de las instancias: '+str(lista_datasets))
+print(matrix_error.to_string())
 
 
-
-
-
-
-'''print(m[1,1:])#KNN
-print(m[2,1:])#SVM
-print(m[3,1:])#DTC'''
