@@ -25,19 +25,32 @@ from sklearn.metrics import confusion_matrix
 
 
 @click.command()
-@click.option('--train_file', '-t', default=None, required=False,
+@click.option('--train_file', '-t', default=None, required=True,
               help=u'Fichero con los datos de entrenamiento.')
+@click.option('--test_file', '-T', default=None, required=False,
+              help=u'Fichero con los datos de test.')
+
+@click.option('--classification', '-c', default=False, required=False,
+              help=u'ue indica si el problema es de clasiﬁcacion. Si no se especiﬁca, supondremos que el problema es de regresion.')
+
+@click.option('--ratio_rbf', '-r', default=0.1, required=False,
+              help=u'Indica la razon.')
+
+@click.option('--l2', '-l', default=False, required=False,
+              help=u'Boleano que se usa para la reguluzación L2.')
+
+@click.option('--outputs', '-o', default=1, required=False,
+              help=u'Numero de salidas.')
+
+
 
 # TODO incluir el resto de parámetros...
 
-@click.option('--model_file', '-m', default="", show_default=True,
-              help=u'Fichero en el que se guardará o desde el que se cargará el modelo (si existe el flag p).') # KAGGLE
-@click.option('--pred', '-p', is_flag=True, default=False, show_default=True,
-              help=u'Activar el modo de predicción.') # KAGGLE
 def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta, outputs, model_file, pred):
     """ Modelo de aprendizaje supervisado mediante red neuronal de tipo RBF.
         Ejecución de 5 semillas.
     """
+
     if not pred:
 
         if train_file is None:
@@ -297,7 +310,6 @@ def predict(test_file, model_file):
         test_predictions = np.dot(test_r, coeficientes)
 
     return test_predictions
-
 
 if __name__ == "__main__":
     entrenar_rbf_total()
