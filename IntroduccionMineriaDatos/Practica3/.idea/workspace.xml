@@ -69,6 +69,9 @@
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -126,6 +129,8 @@
       <workItem from="1572448274201" duration="3304000" />
       <workItem from="1572517093696" duration="226000" />
       <workItem from="1572517343418" duration="5404000" />
+      <workItem from="1572949886650" duration="22000" />
+      <workItem from="1572949956961" duration="31000" />
     </task>
     <servers />
   </component>

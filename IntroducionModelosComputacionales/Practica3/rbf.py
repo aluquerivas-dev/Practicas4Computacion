@@ -1,14 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct 28 12:37:04 2016
+Created on Wed Oct 05 11:37:04 2019
 
-@author: pagutierrez
+@author: Alberto Luque Rivas
 """
 
 # TODO Incluir todos los import necesarios
 import pickle
 import os
+import click
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import math
+import random
+
+from scipy.spatial import distance
+from sklearn.cluster import KMeans
+from sklearn.metrics import accuracy_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import mean_squared_error
+from sklearn.metrics import confusion_matrix
+
 
 @click.command()
 @click.option('--train_file', '-t', default=None, required=False,
@@ -56,28 +70,6 @@ def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta
         print("CCR de entrenamiento: %.2f%% +- %.2f%%" % (np.mean(train_ccrs), np.std(train_ccrs)))
         print("CCR de test: %.2f%% +- %.2f%%" % (np.mean(test_ccrs), np.std(test_ccrs)))
 
-    else:
-        # KAGGLE
-        if model_file is None:
-            print("No se ha indicado un fichero que contenga el modelo (-m).")
-            return
-
-        # Obtener predicciones para el conjunto de test
-        predictions = predict(test_file, model_file)
-
-        # Imprimir las predicciones en formato csv
-        print("Id,Category")
-        for prediction, index in zip(predictions, range(len(predictions))):
-            s = ""
-            s += str(index)
-
-            if isinstance(prediction, np.ndarray):
-                for output in prediction:
-                    s += ",{}".format(output)
-            else:
-                s += ",{}".format(int(prediction))
-
-            print(s)
 
 
 def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs, model_file=""):
@@ -130,27 +122,6 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
           y la matriz R de test
     """
 
-    # # # # KAGGLE # # # #
-    if model_file != "":
-        save_obj = {
-            'classification': classification,
-            'radios': radios,
-            'kmedias': kmedias
-        }
-        if not classification:
-            save_obj['coeficientes'] = coeficientes
-        else:
-            save_obj['logreg'] = logreg
-
-        dir = os.path.dirname(model_file)
-        if not os.path.isdir(dir):
-            os.makedirs(dir)
-
-        with open(model_file, 'wb') as f:
-            pickle.dump(save_obj, f)
-
-    # # # # # # # # # # #
-
     if not classification:
         """
         TODO: Obtener las predicciones de entrenamiento y de test y calcular
@@ -167,6 +138,7 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
 
     
 def lectura_datos(fichero_train, fichero_test, outputs):
+    print('HOLA')
     """ Realiza la lectura de datos.
         Recibe los siguientes parámetros:
             - fichero_train: nombre del fichero de entrenamiento.
