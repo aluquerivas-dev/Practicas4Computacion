@@ -1,10 +1,6 @@
 import click
-
-@click.command()
-@click.option('--train_file','-t', default=None, help='Number of greetings.')
-
-def hello(train_file):
-    print(train_file)
+from sklearn.metrics import accuracy_score
 
 if __name__ == '__main__':
-    hello()
+    score = accuracy_score([1,2,4,4,5],[1,2,3,4,5])
+    print(score)

@@ -12,10 +12,10 @@ import os
 import click
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
 import math
 import random
 
+from click._compat import raw_input
 from scipy.spatial import distance
 from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score
@@ -30,13 +30,13 @@ from sklearn.metrics import confusion_matrix
 @click.option('--test_file', '-T', default=None, required=False,
               help=u'Fichero con los datos de test.')
 
-@click.option('--classification', '-c', default=False, required=False,
+@click.option('--classification', '-c', is_flag=True,
               help=u'ue indica si el problema es de clasiﬁcacion. Si no se especiﬁca, supondremos que el problema es de regresion.')
 
 @click.option('--ratio_rbf', '-r', default=0.1, required=False,
               help=u'Indica la razon.')
 
-@click.option('--l2', '-l', default=False, required=False,
+@click.option('--l2', '-l', is_flag=True,
               help=u'Boleano que se usa para la reguluzación L2.')
 
 @click.option('--outputs', '-o', default=1, required=False,
@@ -51,7 +51,6 @@ def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta
     """ Modelo de aprendizaje supervisado mediante red neuronal de tipo RBF.
         Ejecución de 5 semillas.
     """
-
     if train_file is None:
         print("No se ha especificado el conjunto de entrenamiento (-t)")
         return
@@ -122,7 +121,7 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
     # Una capa de entrada con tantas neuronas como variables tenga la base de datos considerada
     # Por ello el numero de columnas que tenga el train inputs
 
-    num_rbf = np.size(train_inputs,1)
+    num_rbf = int(np.size(train_inputs,0)*ratio_rbf)
     #TODO: Obtener num_rbf a partir de ratio_rbf
     print("Número de RBFs utilizadas: %d" %(num_rbf))
     kmedias, distancias, centros = clustering(classification, train_inputs, 
@@ -150,19 +149,14 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
     matriz_r_test = calcular_matriz_r(distancias_test, radios)
 
     if not classification:
-        """
-        TODO: Obtener las predicciones de entrenamiento y de test y calcular
-              el MSE
-        """
+        #Tenemos que mirar el error del MSE de los train y test para después sacarlo
+        #Multiplicaremos r de test por los coeficientes y así obtendremos la y estimada esto debemos hacerlo tanto para test como para train
         matriz_y_estimada_train = np.dot(matriz_r, coeficientes)
         matriz_y_estimada_test = np.dot(matriz_r_test, coeficientes)
         train_mse = mean_squared_error(train_outputs, matriz_y_estimada_train)
         test_mse = mean_squared_error(test_outputs, matriz_y_estimada_test)
-        matriz_y_estimada_train_redondeada = np.around(matriz_y_estimada_train, decimals=0)
-        matriz_y_estimada_test_redondeada = np.around(matriz_y_estimada_test, decimals=0)
-
-        train_ccr = accuracy_score(matriz_y_estimada_train_redondeada, train_outputs) * 100
-        test_ccr = accuracy_score(matriz_y_estimada_test_redondeada, test_outputs) * 100
+        train_ccr = 0
+        test_ccr = 0
     else:
         """
         TODO: Obtener las predicciones de entrenamiento y de test y calcular
@@ -176,9 +170,8 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
         test_predict = logreg.predict(matriz_r_test)
         train_mse = mean_squared_error(train_predict, train_outputs)
         test_mse = mean_squared_error(test_predict, test_outputs)
-        # Mostramos la matriz de confusion
-        matriz_confusion = confusion_matrix(test_outputs, test_predict)
 
+        matriz_confusion = confusion_matrix(test_outputs, test_predict)
     return train_mse, test_mse, train_ccr, test_ccr
 
     
@@ -258,7 +251,7 @@ def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
     """
 
     #TODO: Completar el código de la función
-    if clasificacion:
+    if clasificacion == True:
         centros = inicializar_centroides_clas(train_inputs, train_outputs, num_rbf)
         kmedias = KMeans(n_clusters=num_rbf, init=centros, n_init=1, max_iter=500)
     else:
