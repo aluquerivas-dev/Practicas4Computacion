@@ -14,14 +14,14 @@ import pandas as pd
 import numpy as np
 import math
 import random
-
 from click._compat import raw_input
 from scipy.spatial import distance
 from sklearn.cluster import KMeans
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, pairwise_distances
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import StratifiedShuffleSplit
 
 
 @click.command()
@@ -80,16 +80,6 @@ def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta
     print("CCR de entrenamiento: %.2f%% +- %.2f%%" % (np.mean(train_ccrs), np.std(train_ccrs)))
     print("CCR de test: %.2f%% +- %.2f%%" % (np.mean(test_ccrs), np.std(test_ccrs)))
 
-
-def calcular_distancias(inputs, centros, num_rbf):
-    distancias = np.empty([inputs.shape[0], num_rbf])
-    for i in range(0, inputs.shape[0]):
-        for j in range(0, centros.shape[0]):
-            # Calculamos la distancia euclidea de cada patron para cada rbf
-            distancias[i, j] = distance.euclidean(inputs[i, :], centros[j, :])
-    # Con eso ya tendriamos una matriz con la distancia a cada centroide de cada uno de los patrones
-    return distancias
-
 def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs):
     """ Modelo de aprendizaje supervisado mediante red neuronal de tipo RBF.
         Una única ejecución.
@@ -118,8 +108,6 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
               En el caso de regresión, devolvemos un cero.
     """
     train_inputs, train_outputs, test_inputs, test_outputs = lectura_datos(train_file,test_file,outputs)
-    # Una capa de entrada con tantas neuronas como variables tenga la base de datos considerada
-    # Por ello el numero de columnas que tenga el train inputs
 
     num_rbf = int(np.size(train_inputs,0)*ratio_rbf)
     #TODO: Obtener num_rbf a partir de ratio_rbf
@@ -145,16 +133,14 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
     TODO: Calcular las distancias de los centroides a los patrones de test
           y la matriz R de test
     """
-    distancias_test = calcular_distancias(test_inputs, centros, num_rbf)
+    distancias_test = distance.cdist(test_inputs, centros, metric='euclidean')
     matriz_r_test = calcular_matriz_r(distancias_test, radios)
 
     if not classification:
-        #Tenemos que mirar el error del MSE de los train y test para después sacarlo
-        #Multiplicaremos r de test por los coeficientes y así obtendremos la y estimada esto debemos hacerlo tanto para test como para train
-        matriz_y_estimada_train = np.dot(matriz_r, coeficientes)
-        matriz_y_estimada_test = np.dot(matriz_r_test, coeficientes)
-        train_mse = mean_squared_error(train_outputs, matriz_y_estimada_train)
-        test_mse = mean_squared_error(test_outputs, matriz_y_estimada_test)
+        matriz_y_train = np.dot(matriz_r, coeficientes)
+        matriz_y_test = np.dot(matriz_r_test, coeficientes)
+        train_mse = mean_squared_error(train_outputs, matriz_y_train)
+        test_mse = mean_squared_error(test_outputs, matriz_y_test)
         train_ccr = 0
         test_ccr = 0
     else:
@@ -172,6 +158,8 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
         test_mse = mean_squared_error(test_predict, test_outputs)
 
         matriz_confusion = confusion_matrix(test_outputs, test_predict)
+        '''print(matriz_confusion)
+        raw_input('ESPERAR...')'''
     return train_mse, test_mse, train_ccr, test_ccr
 
     
@@ -211,25 +199,10 @@ def inicializar_centroides_clas(train_inputs, train_outputs, num_rbf):
                           (num_rbf x num_entradas).
     """
 
-    num_clases = np.unique(train_outputs).shape[0]
-    num_entradas = train_inputs.shape[1]
-    centroides = np.empty([num_rbf, num_entradas])
-    clases = np.empty([num_rbf])
-    for i in range(num_rbf):
-        j = i % num_clases
-        clases[i] = np.unique(train_outputs)[j]
-
-    for i in range(num_rbf):
-        # Metemos 'num_rbf' patrones en la matriz centroides
-        while 1:
-            rand = random.randint(0, train_outputs.shape[0] - 1)
-            if train_outputs[rand] == clases[i]:
-                centroides[i] = train_inputs[rand]
-                np.delete(train_inputs, [rand])
-                np.delete(train_outputs, [rand])
-                break
-
-    return centroides
+    # Particiones estratificadas de num_rbf/clases elementos
+    stratified_split = StratifiedShuffleSplit(n_splits=1, train_size=num_rbf, test_size=None)
+    splits = list(stratified_split.split(train_inputs, train_outputs))[0][0]
+    return train_inputs[splits]
 
 def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
     """ Realiza el proceso de clustering. En el caso de la clasificación, se
@@ -253,17 +226,17 @@ def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
     #TODO: Completar el código de la función
     if clasificacion == True:
         centros = inicializar_centroides_clas(train_inputs, train_outputs, num_rbf)
-        kmedias = KMeans(n_clusters=num_rbf, init=centros, n_init=1, max_iter=500)
+        kmedias = KMeans(n_clusters=num_rbf, init=centros, n_init=1, max_iter=300,n_jobs=-1)
     else:
         # Obtenemos num_brf numeros aleatorios
-        kmedias = KMeans(n_clusters=num_rbf, init='random', max_iter=500)
+        kmedias = KMeans(n_clusters=num_rbf, init='random', max_iter=300,n_jobs=-1)
 
-    kmedias.fit(train_inputs, train_outputs)
+    # Aqui tenemos la matriz de distancias
+    distancias = kmedias.fit_transform(train_inputs)
 
+    # Aqui tenemos los centros
     centros = kmedias.cluster_centers_
 
-    # Calculo de las distancias de cada patron a su cluster mas cercano
-    distancias = calcular_distancias(train_inputs, centros, num_rbf)
     return kmedias, distancias, centros
 
 def calcular_radios(centros, num_rbf):
@@ -274,16 +247,19 @@ def calcular_radios(centros, num_rbf):
         Devuelve:
             - radios: vector (num_rbf) con el radio de cada RBF.
     """
-    radios = np.empty(num_rbf)
-    aux = 0.0
-    # Para cada elemento de los radios calculamos el radio que será el sumatorio
-    for i in range(0, num_rbf):
-        for j in range(0, num_rbf):
-            if i != j:
-                aux += distance.euclidean(centros[i], centros[j])
-        radios[i] = aux / (2 * num_rbf - 1)
-        aux = 0.0
+    # Matriz de distancias, Este método toma una matriz de vectores o una
+    # matriz de distancias, y devuelve una matriz de distancias.
+    # Este método proporciona una forma segura de tomar una matriz de distancia
+    # como entrada, al tiempo que conserva la compatibilidad con muchos otros
+    # algoritmos que toman una matriz de vectores. Si se proporciona Y
+    # (el valor predeterminado es Ninguno),
+    # la matriz devuelta es la distancia por pares entre las matrices de X e Y.
+    distancias = pairwise_distances(centros, Y=None, metric="euclidean", n_jobs=-1)
 
+    # Radios = suma de de todas las filas dividido entre dos por el numero de rbf -1:
+    # sum(filas)/ 2 * num_rbf-1
+
+    radios = distancias.sum(axis=1) / (2 * (num_rbf - 1))
     return radios
 
 
@@ -300,19 +276,17 @@ def calcular_matriz_r(distancias, radios):
               al final, en la última columna, un vector con todos los 
               valores a 1, que actuará como sesgo.
     """
-
-    #TODO: Completar el código de la función
-    # El +1 simboliza el sesgo por que para simular el sesgo hemos incluido una columna constante e igual a 1
-    matriz_r = np.empty([distancias.shape[0], distancias.shape[1] + 1])
-    # todo Sesgo a 1
-    matriz_r[:, 0] = 1
-
     # Vamos mirando cada distancia con el radio y asi vamos viendo
     # Si la distancia es mayor que el radio entonces la salida de la neurona es 0
     # Mientras que si la distancia es menor que el radio, la salida será 1
-    for i in range(0, matriz_r.shape[0]):
+    """for i in range(0, matriz_r.shape[0]):
         for j in range(0, matriz_r.shape[1] - 1):
-            matriz_r[i][j + 1] = math.exp(-(distancias[i][j] ** 2) / (2 * radios[j] ** 2))
+            matriz_r[i][j + 1] = math.exp(-(distancias[i][j] ** 2) / (2 * radios[j] ** 2))"""
+    # Esta forma es mas eficiente
+    sesgo = np.ones(distancias.shape[0])
+    matriz_r = np.exp(-np.square(distancias) / (np.square(radios) * 2))
+    # Añadimos el sesgo apilando en columna con column_stack
+    matriz_r = np.column_stack((matriz_r, sesgo))
 
     return matriz_r
 
@@ -366,9 +340,9 @@ def logreg_clasificacion(matriz_r, train_outputs, eta, l2):
     #TODO: Completar el código de la función
     #Penalty sed to specify the norm used in the penalization
     if l2:
-        logreg = LogisticRegression(penalty='l2', C=1 / eta, fit_intercept=False)
+        logreg = LogisticRegression(penalty='l2', C=1 / eta, fit_intercept=False,multi_class='auto',solver='liblinear',max_iter=500)
     else:
-        logreg = LogisticRegression(penalty='l1', C=1 / eta, fit_intercept=False)
+        logreg = LogisticRegression(penalty='l1', C=1 / eta, fit_intercept=False,multi_class='auto',solver='liblinear',max_iter=500)
 
     #Entrenated model
     logreg.fit(matriz_r, train_outputs)

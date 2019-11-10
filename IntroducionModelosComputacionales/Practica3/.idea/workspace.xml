@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="47d97eb6-d162-470e-abaf-065db2fea23f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Practica3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Practica3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/csv/train_quake.csv" beforeDir="false" afterPath="$PROJECT_DIR$/csv/train_quake.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello.py" beforeDir="false" afterPath="$PROJECT_DIR$/hello.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rbf.py" beforeDir="false" afterPath="$PROJECT_DIR$/rbf.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +97,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rbf.py" />
-      <option name="PARAMETERS" value="-t ./csv/train_vote.csv -T ./csv/test_vote.csv -c -r 0.15 -e 0.001 --l2" />
+      <option name="PARAMETERS" value="-t ./csv/train_quake.csv -T ./csv/test_quake.csv -r 0.25 -e 0.0001 --l2" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
