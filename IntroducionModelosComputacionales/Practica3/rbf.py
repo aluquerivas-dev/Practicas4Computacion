@@ -254,7 +254,7 @@ def calcular_radios(centros, num_rbf):
     # algoritmos que toman una matriz de vectores. Si se proporciona Y
     # (el valor predeterminado es Ninguno),
     # la matriz devuelta es la distancia por pares entre las matrices de X e Y.
-    distancias = pairwise_distances(centros, Y=None, metric="euclidean", n_jobs=-1)
+    distancias = pairwise_distances(centros,Y=None,metric="euclidean")
 
     # Radios = suma de de todas las filas dividido entre dos por el numero de rbf -1:
     # sum(filas)/ 2 * num_rbf-1
@@ -311,11 +311,12 @@ def invertir_matriz_regresion(matriz_r, train_outputs):
     # Compute the (Moore-Penrose) pseudo-inverse of a matrix.
     # Calculate the generalized inverse of a matrix using its singular-value decomposition (SVD) and including all large singular values.
 
-    moore_penrose = np.linalg.pinv(matriz_r)
+
     #TODO:
     # Dot product of two arrays. Specifically
     # This operation gives the transpose
-    coeficientes = np.dot(moore_penrose, train_outputs)
+    coeficientes = np.dot(np.dot(np.linalg.pinv(np.dot(matriz_r.T,matriz_r)),matriz_r.T),train_outputs)
+
     return coeficientes
 
 def logreg_clasificacion(matriz_r, train_outputs, eta, l2):
