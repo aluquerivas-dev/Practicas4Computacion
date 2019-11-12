@@ -279,10 +279,7 @@ def calcular_matriz_r(distancias, radios):
     # Vamos mirando cada distancia con el radio y asi vamos viendo
     # Si la distancia es mayor que el radio entonces la salida de la neurona es 0
     # Mientras que si la distancia es menor que el radio, la salida será 1
-    """for i in range(0, matriz_r.shape[0]):
-        for j in range(0, matriz_r.shape[1] - 1):
-            matriz_r[i][j + 1] = math.exp(-(distancias[i][j] ** 2) / (2 * radios[j] ** 2))"""
-    # Esta forma es mas eficiente
+
     sesgo = np.ones(distancias.shape[0])
     matriz_r = np.exp(-np.square(distancias) / (np.square(radios) * 2))
     # Añadimos el sesgo apilando en columna con column_stack
