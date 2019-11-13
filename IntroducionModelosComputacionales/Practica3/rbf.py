@@ -13,6 +13,7 @@ import click
 import pandas as pd
 import numpy as np
 import math
+import time
 import random
 from click._compat import raw_input
 from scipy.spatial import distance
@@ -22,6 +23,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import StratifiedShuffleSplit
+from sklearn.preprocessing import label_binarize,OneHotEncoder
 
 
 @click.command()
@@ -44,10 +46,11 @@ from sklearn.model_selection import StratifiedShuffleSplit
 
 @click.option('--eta', '-e', default=(1*math.exp(-2)), required=False,
               help=u'Ajuste del factor eta.')
-
+@click.option('--matrix_m', '-m', is_flag=True,
+              help=u'Boleano que se usa para mostrar la matriz de confusion')
 # TODO incluir el resto de parámetros...
 
-def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta, outputs):
+def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta, outputs,matrix_m):
     """ Modelo de aprendizaje supervisado mediante red neuronal de tipo RBF.
         Ejecución de 5 semillas.
     """
@@ -61,12 +64,17 @@ def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta
     train_ccrs = np.empty(5)
     test_mses = np.empty(5)
     test_ccrs = np.empty(5)
+    tiempos = np.empty(5)
     for s in range(1, 6, 1):
         print("-----------")
         print("Semilla: %d" % s)
         print("-----------")
         np.random.seed(s)
-        train_mses[s - 1], test_mses[s - 1], train_ccrs[s - 1], test_ccrs[s - 1] = entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs)
+        inicio = time.time()
+        train_mses[s - 1], test_mses[s - 1], train_ccrs[s - 1], test_ccrs[s - 1] = entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs,matrix_m)
+        fin = time.time()
+        tiempos[s-1]=fin-inicio
+        print("Tiempo de ejecución: %f" % tiempos[s- 1])
         print("MSE de entrenamiento: %f" % train_mses[s - 1])
         print("MSE de test: %f" % test_mses[s - 1])
         print("CCR de entrenamiento: %.2f%%" % train_ccrs[s - 1])
@@ -75,12 +83,13 @@ def entrenar_rbf_total(train_file, test_file, classification, ratio_rbf, l2, eta
     print("*********************")
     print("Resumen de resultados")
     print("*********************")
+    print("Tiempo medio: %f" % np.mean(tiempos))
     print("MSE de entrenamiento: %f +- %f" % (np.mean(train_mses), np.std(train_mses)))
     print("MSE de test: %f +- %f" % (np.mean(test_mses), np.std(test_mses)))
     print("CCR de entrenamiento: %.2f%% +- %.2f%%" % (np.mean(train_ccrs), np.std(train_ccrs)))
     print("CCR de test: %.2f%% +- %.2f%%" % (np.mean(test_ccrs), np.std(test_ccrs)))
 
-def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs):
+def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outputs,matrix_m):
     """ Modelo de aprendizaje supervisado mediante red neuronal de tipo RBF.
         Una única ejecución.
         Recibe los siguientes parámetros:
@@ -137,29 +146,44 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
     matriz_r_test = calcular_matriz_r(distancias_test, radios)
 
     if not classification:
-        matriz_y_train = np.dot(matriz_r, coeficientes)
-        matriz_y_test = np.dot(matriz_r_test, coeficientes)
-        train_mse = mean_squared_error(train_outputs, matriz_y_train)
-        test_mse = mean_squared_error(test_outputs, matriz_y_test)
-        train_ccr = 0
-        test_ccr = 0
+        # MSE en train y test
+        matriz_y_estimada_train = np.dot(matriz_r, coeficientes)
+        matriz_y_estimada_test = np.dot(matriz_r_test, coeficientes)
+        train_mse = mean_squared_error(train_outputs, matriz_y_estimada_train)
+        test_mse = mean_squared_error(test_outputs, matriz_y_estimada_test)
+
+        train_ccr = accuracy_score(matriz_y_estimada_train.round(), train_outputs.round())*100
+        test_ccr = accuracy_score(matriz_y_estimada_test.round(), test_outputs.round())*100
+
     else:
         """
         TODO: Obtener las predicciones de entrenamiento y de test y calcular
               el CCR. Calcular también el MSE, comparando las probabilidades 
               obtenidas y las probabilidades objetivo
         """
+        # CCR en train y test
         train_ccr = logreg.score(matriz_r, train_outputs) * 100
         test_ccr = logreg.score(matriz_r_test, test_outputs) * 100
+        # MSE en train y test
+        # Notacion 1 de Q binarizando los label de test outputs con las clases de logreg
+        # Notacion 1 de Q binarizando los label de train outputs con las clases de logreg
+            # Example: label_binarize(['yes', 'no', 'no', 'yes'], classes=['no', 'yes'])
+                #Result array([[1],[0],[0], [1]])
+        y_true_train = label_binarize(train_outputs, classes=logreg.classes_)
+        y_true_test = label_binarize(test_outputs, classes=logreg.classes_)
 
-        train_predict = logreg.predict(matriz_r)
-        test_predict = logreg.predict(matriz_r_test)
-        train_mse = mean_squared_error(train_predict, train_outputs)
-        test_mse = mean_squared_error(test_predict, test_outputs)
+        if y_true_train.shape[1] == logreg.predict_proba(matriz_r).shape[1]:
+            train_mse = mean_squared_error(y_true=y_true_train,y_pred=logreg.predict_proba(matriz_r))
+            test_mse = mean_squared_error(y_true=y_true_test,y_pred=logreg.predict_proba(matriz_r_test))
+        else:
+            train_mse = mean_squared_error(y_true=train_outputs, y_pred=logreg.predict(matriz_r))
+            test_mse = mean_squared_error(y_true=test_outputs, y_pred=logreg.predict(matriz_r_test))
 
-        matriz_confusion = confusion_matrix(test_outputs, test_predict)
-        '''print(matriz_confusion)
-        raw_input('ESPERAR...')'''
+        # Matriz de confusión
+        if matrix_m:
+            matrix_confusion = confusion_matrix(test_outputs, logreg.predict(matriz_r_test))
+            print(matrix_confusion)
+
     return train_mse, test_mse, train_ccr, test_ccr
 
     
@@ -229,7 +253,7 @@ def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
         kmedias = KMeans(n_clusters=num_rbf, init=centros, n_init=1, max_iter=300,n_jobs=-1)
     else:
         # Obtenemos num_brf numeros aleatorios
-        kmedias = KMeans(n_clusters=num_rbf, init='random', max_iter=300,n_jobs=-1)
+        kmedias = KMeans(n_clusters=num_rbf, init='k-means++', max_iter=300,n_jobs=-1)
 
     # Aqui tenemos la matriz de distancias
     distancias = kmedias.fit_transform(train_inputs)
