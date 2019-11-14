@@ -118,6 +118,7 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
     """
     train_inputs, train_outputs, test_inputs, test_outputs = lectura_datos(train_file,test_file,outputs)
 
+
     num_rbf = int(np.size(train_inputs,0)*ratio_rbf)
     #TODO: Obtener num_rbf a partir de ratio_rbf
     print("Número de RBFs utilizadas: %d" %(num_rbf))
@@ -164,21 +165,19 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
         # CCR en train y test
         train_ccr = logreg.score(matriz_r, train_outputs) * 100
         test_ccr = logreg.score(matriz_r_test, test_outputs) * 100
+
         # MSE en train y test
         # Notacion 1 de Q binarizando los label de test outputs con las clases de logreg
         # Notacion 1 de Q binarizando los label de train outputs con las clases de logreg
             # Example: label_binarize(['yes', 'no', 'no', 'yes'], classes=['no', 'yes'])
                 #Result array([[1],[0],[0], [1]])
-        y_true_train = label_binarize(train_outputs, classes=logreg.classes_)
-        y_true_test = label_binarize(test_outputs, classes=logreg.classes_)
 
-        if y_true_train.shape[1] == logreg.predict_proba(matriz_r).shape[1]:
-            train_mse = mean_squared_error(y_true=y_true_train,y_pred=logreg.predict_proba(matriz_r))
-            test_mse = mean_squared_error(y_true=y_true_test,y_pred=logreg.predict_proba(matriz_r_test))
-        else:
-            train_mse = mean_squared_error(y_true=train_outputs, y_pred=logreg.predict(matriz_r))
-            test_mse = mean_squared_error(y_true=test_outputs, y_pred=logreg.predict(matriz_r_test))
+        encoder = OneHotEncoder(categories='auto')
+        train_outputs_binarized = encoder.fit_transform(train_outputs).toarray()
+        test_outputs_binarized  = encoder.fit_transform(test_outputs).toarray()
 
+        train_mse = mean_squared_error(y_true=train_outputs_binarized,y_pred=logreg.predict_proba(matriz_r))
+        test_mse  = mean_squared_error(y_true=test_outputs_binarized,y_pred=logreg.predict_proba(matriz_r_test))
         # Matriz de confusión
         if matrix_m:
             matrix_confusion = confusion_matrix(test_outputs, logreg.predict(matriz_r_test))
@@ -204,9 +203,10 @@ def lectura_datos(fichero_train, fichero_test, outputs):
             - test_outputs: matriz con las variables de salida de 
               test.
     """
-    train = pd.read_csv(fichero_train, header=None)
-    test = pd.read_csv(fichero_test, header=None)
-    return train.values[:, 0:-outputs], train.values[:, -outputs], test.values[:, 0:-outputs], test.values[:, -outputs]
+    train = pd.read_csv(fichero_train, header=None).to_numpy()
+    test = pd.read_csv(fichero_test, header=None).to_numpy()
+
+    return train[:,:-outputs], train[:,-outputs:], test[:,:-outputs], test[:,-outputs:]
 
 def inicializar_centroides_clas(train_inputs, train_outputs, num_rbf):
     """ Inicializa los centroides para el caso de clasificación.
@@ -253,7 +253,7 @@ def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
         kmedias = KMeans(n_clusters=num_rbf, init=centros, n_init=1, max_iter=300,n_jobs=-1)
     else:
         # Obtenemos num_brf numeros aleatorios
-        kmedias = KMeans(n_clusters=num_rbf, init='k-means++', max_iter=300,n_jobs=-1)
+        kmedias = KMeans(n_clusters=num_rbf, init='random', max_iter=300,n_jobs=-1)
 
     # Aqui tenemos la matriz de distancias
     distancias = kmedias.fit_transform(train_inputs)
@@ -367,6 +367,8 @@ def logreg_clasificacion(matriz_r, train_outputs, eta, l2):
         logreg = LogisticRegression(penalty='l1', C=1 / eta, fit_intercept=False,multi_class='auto',solver='liblinear',max_iter=500)
 
     #Entrenated model
+    if train_outputs.shape[1]==1:
+            train_outputs = np.ravel(train_outputs)
     logreg.fit(matriz_r, train_outputs)
 
     return logreg
