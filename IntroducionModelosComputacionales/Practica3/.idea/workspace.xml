@@ -39,8 +39,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.rbf">
-    <configuration name="hello" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.ejercicioJupiter">
+    <configuration name="ejercicioJupiter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -52,8 +52,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hello.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ejercicioJupiter.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,19 +150,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.hello" />
       <item itemvalue="Python.rbf" />
       <item itemvalue="Python.jopepato" />
       <item itemvalue="Python.prueba" />
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.ejercicioJupiter" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ejercicioJupiter" />
+        <item itemvalue="Python.prueba" />
         <item itemvalue="Python.rbf" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.prueba" />
         <item itemvalue="Python.jopepato" />
-        <item itemvalue="Python.hello" />
       </list>
     </recent_temporary>
   </component>

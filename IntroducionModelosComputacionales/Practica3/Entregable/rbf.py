@@ -260,6 +260,7 @@ def clustering(clasificacion, train_inputs, train_outputs, num_rbf):
 
     # Aqui tenemos los centros
     centros = kmedias.cluster_centers_
+
     return kmedias, distancias, centros
 
 def calcular_radios(centros, num_rbf):
