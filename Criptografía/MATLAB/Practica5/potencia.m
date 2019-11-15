@@ -11,8 +11,7 @@ function pote=potencia(c, d, n)
 
     if isNat(c)==1 && isNat(d)==1 && isNat(n)==1
             
-     array_bin = dec2bin(d) 	
-     disp(array_bin)
+     array_bin = dec2bin(d) ;	
      pote = 1;
      variable = mod(c,n); 
      for i=length(array_bin):-1:1
