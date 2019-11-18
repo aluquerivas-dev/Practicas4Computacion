@@ -15,6 +15,6 @@ function doble =letra2numeros(texto)
         end
         ARRAY = [ARRAY, aux];
         
-        doble = ARRAY
+        doble = ARRAY;
 end
 
