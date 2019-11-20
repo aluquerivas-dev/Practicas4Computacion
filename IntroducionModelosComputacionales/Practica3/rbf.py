@@ -176,6 +176,9 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
         train_outputs_binarized = encoder.fit_transform(train_outputs).toarray()
         test_outputs_binarized  = encoder.fit_transform(test_outputs).toarray()
 
+        print(pd.DataFrame(test_outputs_binarized))
+        print(pd.DataFrame(logreg.predict_proba(matriz_r_test)))
+        raw_input()
         train_mse = mean_squared_error(y_true=train_outputs_binarized,y_pred=logreg.predict_proba(matriz_r))
         test_mse  = mean_squared_error(y_true=test_outputs_binarized,y_pred=logreg.predict_proba(matriz_r_test))
         # Matriz de confusión

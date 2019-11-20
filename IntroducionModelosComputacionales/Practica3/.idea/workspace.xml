@@ -39,7 +39,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ejercicioJupiter">
+  <component name="RunManager" selected="Python.rbf">
     <configuration name="ejercicioJupiter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -141,7 +141,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/rbf.py" />
-      <option name="PARAMETERS" value="-t ./csv/train_sin.csv -T ./csv/test_sin.csv -r 0.25" />
+      <option name="PARAMETERS" value="-t ./csv/train_nomnist.csv -T ./csv/test_nomnist.csv -c" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -158,9 +158,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.rbf" />
         <item itemvalue="Python.ejercicioJupiter" />
         <item itemvalue="Python.prueba" />
-        <item itemvalue="Python.rbf" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.jopepato" />
       </list>
