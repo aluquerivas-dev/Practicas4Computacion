@@ -39,7 +39,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.rbf">
+  <component name="RunManager" selected="Python.__main__">
+    <configuration name="__main__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Practica3" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="D:/DESCARGAS/Descargas Internet/wxPython-demo-4.0.7.tar/wxPython-demo-4.0.7/demo" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:/DESCARGAS/Descargas Internet/wxPython-demo-4.0.7.tar/wxPython-demo-4.0.7/demo/__main__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ejercicioJupiter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -53,28 +74,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ejercicioJupiter.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="jopepato" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Practica3" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jopepato.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,18 +150,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.rbf" />
-      <item itemvalue="Python.jopepato" />
       <item itemvalue="Python.prueba" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.ejercicioJupiter" />
+      <item itemvalue="Python.__main__" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__main__" />
         <item itemvalue="Python.rbf" />
         <item itemvalue="Python.ejercicioJupiter" />
         <item itemvalue="Python.prueba" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.jopepato" />
       </list>
     </recent_temporary>
   </component>
