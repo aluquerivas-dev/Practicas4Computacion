@@ -11,17 +11,15 @@
 % inversa módulo el número de filas de foto.
 % Salidas: Ninguna. Debe guardar las nuevas matrices obtenidas para
 % un posible uso posterior.
-function desorden_pixel(foto,A)
+function imagen = desorden_pixel(foto,A)
 
     IMG_matriz = imread(foto);
     [FILAS,COLUMNAS,CANALES] = size(IMG_matriz);
     
     if FILAS < COLUMNAS
-        disp('Se resiza la matrix')
         IMG_matriz = IMG_matriz(:,1:FILAS,:);
         [FILAS,COLUMNAS,CANALES] = size(IMG_matriz);
     else
-        disp('Se resiza la matrix')
         IMG_matriz = IMG_matriz(1:COLUMNAS,:,:);
         [FILAS,COLUMNAS,CANALES] = size(IMG_matriz);
     end
@@ -52,6 +50,6 @@ function desorden_pixel(foto,A)
          end
      end
      M_AUX=uint8(M_AUX);
-     imwrite(M_AUX,'prueba.bmp')
+     imagen = M_AUX;
 end
 
