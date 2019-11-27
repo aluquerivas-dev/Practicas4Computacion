@@ -176,9 +176,6 @@ def entrenar_rbf(train_file, test_file, classification, ratio_rbf, l2, eta, outp
         train_outputs_binarized = encoder.fit_transform(train_outputs).toarray()
         test_outputs_binarized  = encoder.fit_transform(test_outputs).toarray()
 
-        print(pd.DataFrame(test_outputs_binarized))
-        print(pd.DataFrame(logreg.predict_proba(matriz_r_test)))
-        raw_input()
         train_mse = mean_squared_error(y_true=train_outputs_binarized,y_pred=logreg.predict_proba(matriz_r))
         test_mse  = mean_squared_error(y_true=test_outputs_binarized,y_pred=logreg.predict_proba(matriz_r_test))
         # Matriz de confusión
@@ -206,8 +203,8 @@ def lectura_datos(fichero_train, fichero_test, outputs):
             - test_outputs: matriz con las variables de salida de 
               test.
     """
-    train = pd.read_csv(fichero_train, header=None).to_numpy()
-    test = pd.read_csv(fichero_test, header=None).to_numpy()
+    train = pd.read_csv(fichero_train, header=None,delim_whitespace=True).to_numpy()
+    test = pd.read_csv(fichero_test, header=None,delim_whitespace=True).to_numpy()
 
     return train[:,:-outputs], train[:,-outputs:], test[:,:-outputs], test[:,-outputs:]
 
