@@ -18,5 +18,5 @@ print("Determinante de la matriz: "+str(round(NP.linalg.det(m))))
 
 print("\n   Apartado 3.3")
 
-print("Rango de la matriz: ")+str(NP.linalg.matrix_rank(m))
+print("Rango de la matriz: "+str(NP.linalg.matrix_rank(m)))
 
