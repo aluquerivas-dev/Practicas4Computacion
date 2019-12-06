@@ -48,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.prueba">
+  <component name="RunManager" selected="Python.practica">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,9 +75,6 @@
       <module name="Practica3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -117,8 +114,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.prueba" />
         <item itemvalue="Python.practica" />
+        <item itemvalue="Python.prueba" />
       </list>
     </recent_temporary>
   </component>
