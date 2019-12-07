@@ -1,25 +1,14 @@
-% md5(
-% Compute the MD5 digest of the message, as a hexadecimal digest.
-
-% Follow the MD5 algorithm from RFC 1321 [1] and Wikipedia [2].
-% [1] http://tools.ietf.org/html/rfc1321
-% [2] http://en.wikipedia.org/wiki/MD5
-
-% m is the modulus for 32-bit unsigned arithmetic.
+%  md5
+%  Halla el resumen MD5 del mensaje, como una cadena hexadecimal.
 function fhash = md5(mensaje)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%x%%%
 
 %% PASO 1 INTRODUCIMOS VARIABLES Y CONSTANTES NECESARIAS
 clc
-%PASO1.1 ESCRIBIMOS EL MENSAJE
-%mensaje = input('Introduce el mensaje que quieres cifrar: ');
-%El mensaje entra como parámetro
-
-
+%PASO1.1 MENSAJE COMO PARAMETRO
 %PASO 1.2.- VAMOS A TRABAJAR MODULO M=2^32
 m=2^32;
-
 % PASO 1.3.- CREAMOS UNA MATRIZ S PARA HACER LA ROTACIÓN,
 % LOS NÚMEROS NEGATIVOS POR SER UNA ROTACIÓN A IZQUIERDA
 s = [-7, -12, -17, -22;-5,  -9, -14, -20;-4, -11, -16, -23;-6, -10, -15, -21];
@@ -45,7 +34,7 @@ fhash =uint32(fhash);
 %% PASO 2.- PREPARAMOS EL MENSAJE PARA APLICARLE LA HASH
 bitlen = length(mensaje)*8;
 mensaje = abs(mensaje);
-bytelen = numel(mensaje); %n?mero de elementos del vector 
+bytelen = numel(mensaje); %numero de elementos del vector 
 
 % PASO 2.1.-
 % A?ADIMOS AL MENSAJE UN 1 Y  LOS 0'S NECESARIOS PARA QUE EL N?NERO DE BITS
@@ -73,10 +62,10 @@ matrizMensj = reshape(mensaje, 4, []);
 
 % PASO 2.3.-
 % CONVERTIMOS CADA COLUMNA A ENTEROS DE 32 BITS, little endian.
-auxVector = [];
+AUX = [];
 for i=1:size(matrizMensj, 2)
     aux = matrizMensj(1,i) + 2^8*matrizMensj(2,i) + 2^16*matrizMensj(3,i) + 2^24*matrizMensj(4,i);
-    auxVector = [auxVector, uint32(aux)];
+    AUX = [AUX, uint32(aux)];
 end
 
 % PASO 2.4.-
@@ -84,16 +73,17 @@ end
 % A?ADIMOS LA LONG DEL MENSAJE ORIGINAL COMO UN ENTERO 
 % DE 64 BITS __>8 bytes__>dos palabras : little endian.
 %Ya tenemos bitlen del principio del mensaje
-auxVector = [auxVector, mod(bitlen,m), mod(floor(bitlen/m), m)];
+AUX = [AUX, mod(bitlen,m), mod(floor(bitlen/m), m)];
 
-mensaje = double(auxVector);
+mensaje = double(AUX);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% PASO 3. REALIZAMOS LA FUNCIÓN HASH
 % CADA BLOQUE DE  512bit
 % TENEMOS ENTEROS DE 32 BITS (PALABRA)CADA BLOQUE TIENE 16 ELEMENTOS
 % (PALABRAS)
-% message(k + (0:15)).
+% message(k + (0:15))
+
 for k = 1:16:numel(mensaje)
     a = fhash(1); b = fhash(2); c = fhash(3); d = fhash(4);
     for i =1:64
@@ -104,21 +94,21 @@ for k = 1:16:numel(mensaje)
         % obtenemos  f  = mix of b, c, d.
         %      ki = indice  0:15, del mensaje (k + ki).
         %      sr = filas 1:4, de  s(sr, :).
-        if i <= 16          % ronda 1
+        if i <= 16          % Turno 1
             f = (bv & cv) | (~bv & dv);
             ki = i - 1;
             sr = 1;
-        elseif i <= 32      % ronda 2
+        elseif i <= 32      % Turno 2
             f = (bv & dv) | (cv & ~dv);
-            ki = mod(5 * i - 4, 16); %de 5 en 5 empezando en 1
+            ki = mod(5 * i - 4, 16); 
             sr = 2;
         elseif i <= 48      % ronda 3
             f = xor(bv, xor(cv, dv));
-            ki = mod(3 * i + 2, 16);    %de 3 en 3 empezando en 5
+            ki = mod(3 * i + 2, 16);   
             sr = 3;
-        else                % ronda 4
+        else                % Turno 4
             f = xor(cv, bv | ~dv);
-            ki = mod(7 * i - 7, 16);    %de 7 en 7 empezando en 0
+            ki = mod(7 * i - 7, 16);
             sr = 4;
         end
         % Convert f, DE VECTOR FILA DE BITS  A  ENTEROS DE 32-bit .

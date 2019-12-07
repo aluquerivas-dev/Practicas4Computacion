@@ -1,0 +1,110 @@
+\documentclass[11pt,a4paper,twoside]{book}
+
+% PAQUETES ------------------------------------------------------------------------------
+\usepackage{framed}
+\usepackage{color}
+\usepackage{wrapfig}\definecolor{shadecolor}{RGB}{224,238,238}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{url}
+% Manejo de simbolos de cita multiples
+\usepackage{csquotes}
+% Figuras
+\usepackage{graphicx}
+% Configuracion de interlineado (\onehalfspace y \singlespacing en capitulos)
+%\usepackage{setspace}
+% Permite que las figuras floten en la posición en la que aparecen en el código
+\usepackage{float}
+% Permite dar estilo a los subtitulos de las figuras (captions)
+\usepackage{caption}
+% Permite sub-captions en sub-figuras (figuras dentro de figuras)
+\usepackage{subcaption}
+% Permite múltiples filas en tablas
+\usepackage{multirow}
+% Elimina numeracion de paginas en blanco
+\usepackage{emptypage}
+% Permite continuar con la numeración entre listas distintas
+\usepackage{enumitem}
+% Bibliografia
+% \usepackage[
+% 	backend=biber,
+% 	style=numeric,
+% 	sorting=none
+% ]{biblatex}
+% \addbibresource{./capitulos/bibliografia.bib}
+% Introduce la bibliografía en el índice
+\usepackage[nottoc]{tocbibind}
+% Modificar encabezamientos y pie de páginas
+\usepackage{fancyhdr}
+% Control de enlaces hipertexto en el documento. Este paquete debe cargarse el último.
+\usepackage{hyperref}
+% Configuracion interna del documento PDF, requiere hyperref
+\hypersetup {
+    pdfauthor = {AUTOR},
+    pdfsubject = {TITULO},
+    pdftitle = {Trabajo de Fin de Grado - Manual Técnico},
+    pdfkeywords = {palabras, clave}
+}
+% Rompe URLs largas
+%\usepackage{breakurl}
+% Soporte para estructuras de algoritmos en pseudocódigo
+\usepackage[spanish,onelanguage,ruled,vlined,linesnumbered]{algorithm2e}
+% Soporte de listado de codigo MATLAB
+\usepackage[numbered,autolinebreaks]{mcode}
+
+% Marca en rojo los elementos pendientes (TO-DOs)
+\newcommand{\todo}[1]{\textcolor{red}{TODO: #1}}
+
+% Informacion del documento -------------------------------------------------------------
+\author{TU NOMBRE}
+\title{EL TITULO}
+\date{LA FECHA}
+
+\newcommand{\opinion}[1]{
+    \begin{wrapfigure}[0]{r}{1\textwidth}
+    \vspace{-30pt}
+    \begin{shaded}
+        \textbf{Opinión:} {#1}
+    \end{shaded}
+    \end{wrapfigure}
+\clearpage
+}
+% ESTILOS DE PAGINA ---------------------------------------------------------------------
+% Indexación de contenidos hasta 3er nivel
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+% Encabezado y pie de pagina
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\rightmark}
+\fancyhead[LE]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+% Fijar altura vertical de la cabecera
+\setlength{\headheight}{15pt}
+% Lineas de encabezado y pie de pagina
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+% Interlineado de 1.5
+\renewcommand{\baselinestretch}{1.5}
+% Enlaces
+\hypersetup{
+    colorlinks=true,
+    urlcolor=cyan,
+}
+% Espacio despues de tablas
+%\setlength{\textfloatsep}{0.1cm}
+
+% DOCUMENTO ----------------------------------------------------------------------------
+\begin{document}
+
+% PORTADA ------------------------------------------------------------------------------
+\input{./capitulos/portada}
+
+\tableofcontents
+
+\input{./capitulos/contenido}
+
+\end{document}
